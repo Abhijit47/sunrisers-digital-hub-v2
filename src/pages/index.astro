@@ -1,23 +1,24 @@
 ---
-import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import Layout from "../layouts/Layout.astro";
-
+import BrandsWorkedWithSection from '@/components/home/BrandsWorkedWithSection.astro';
+import CaseStudiesSection from '@/components/home/CaseStudiesSection.astro';
+import ClientTestimonialsSection from '@/components/home/ClientTestimonialsSection.astro';
+import HeroSection from '@/components/home/HeroSection.astro';
+import IndustriesWeServeSection from '@/components/home/IndustriesWeServeSection.astro';
+import OurServicesSection from '@/components/home/OurServicesSection.astro';
+import PreFooterBannerCTA from '@/components/home/PreFooterBannerCTA.astro';
+import WhyChooseUsSection from '@/components/home/WhyChooseUsSection.astro';
+import Layout from '@/layouts/Layout.astro';
 ---
 
-<Layout title="Home">
-  <main class="max-w-7xl mx-auto">
-    <Card>
-      <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-    <CardDescription>Card Description</CardDescription>
-    <CardAction>Card Action</CardAction>
-  </CardHeader>
-  <CardContent>
-    <p>Card Content</p>
-  </CardContent>
-  <CardFooter>
-    <p>Card Footer</p>
-  </CardFooter>
-</Card>
-</main>
+<Layout title='Home'>
+  <main class='max-w-7xl mx-auto'>
+    <HeroSection />
+    <OurServicesSection />
+    <WhyChooseUsSection />
+    <IndustriesWeServeSection />
+    <CaseStudiesSection />
+    <BrandsWorkedWithSection />
+    <ClientTestimonialsSection />
+    <PreFooterBannerCTA />
+  </main>
 </Layout>

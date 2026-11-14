@@ -13,11 +13,23 @@
     "paths": {
       "@/*": [
         "./*",
-        "./src/*"
+        "./src/*",
+        "./src/components/*",
+        "./src/types/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "types/*": [
+        "./src/types/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
       ]
     },
     "moduleResolution": "bundler",
     "resolvePackageJsonImports": true,
+    "verbatimModuleSyntax": true,
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   }

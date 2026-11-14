@@ -1,0 +1,102 @@
+---
+import type { SVG } from '@/types';
+import Marquee from '@moonarc/core/Marquee';
+import { Image } from 'astro:assets';
+
+const response = await fetch('https://api.svgl.app', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    'Cache-Control': 'max-age=864000, stale-while-revalidate=864000',
+  },
+  cache: 'force-cache',
+});
+const data = (await response.json()) as SVG[];
+
+const logos = data
+  .map((l) => {
+    if (typeof l.route === 'string') {
+      return l;
+    }
+    return null;
+  })
+  .splice(0, 10)
+  .filter((l) => l !== null) as SVG[];
+---
+
+<!-- BEGIN: BrandsWorkedWithSection -->
+<section
+  class='py-12 bg-white border-b border-slate-200'
+  data-purpose='trusted-brands'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <div class='flex flex-col lg:flex-row items-center justify-between gap-8'>
+      <!-- Heading Label -->
+      <div class='text-center lg:text-left shrink-0'>
+        <div class='flex items-center gap-2 justify-center lg:justify-start mb-1'>
+          <span class='w-4 h-1 bg-brand-orange rounded-full'></span>
+          <span class='text-[10px] uppercase tracking-wider font-extrabold text-brand-orange'>
+            TRUSTED BY LEADING BRANDS
+          </span>
+        </div>
+        <h3 class='text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight'>
+          Brands &amp; Companies
+          <br class='hidden sm:inline' />
+          We've Worked With
+        </h3>
+      </div>
+      <!-- Corporate Partner Logos Row -->
+      <Marquee duration={12} gap='3' class={'w-full'}>
+        {logos.map((logo) => (
+          <Image
+            src={logo.route as string}
+            alt={logo.id.toString()}
+            class='h-8 w-auto object-contain'
+            width={32}
+            height={32}
+          />
+        ))}
+        <!-- <Github size={24} aria-label={'GitHub'} role='img' />
+        <VisualStudioCode
+          aria-label={'Visual Studio Code'}
+          size={24}
+          class='text-blue-500'
+          role='img'
+        />
+        <Figma size={24} aria-label='Figma' role='img' />
+        <Teable size={24} aria-label={'GitHub'} role='img' />
+        <VisualStudioCode
+          aria-label={'Visual Studio Code'}
+          size={24}
+          class='text-blue-500'
+          role='img'
+        />
+        <Figma size={24} aria-label='Figma' role='img' />
+        <Github size={24} aria-label={'GitHub'} role='img' />
+        <VisualStudioCode
+          aria-label={'Visual Studio Code'}
+          size={24}
+          class='text-blue-500'
+          role='img'
+        />
+        <Figma size={24} aria-label='Figma' role='img' />
+        <Github size={24} aria-label={'GitHub'} role='img' />
+        <VisualStudioCode
+          aria-label={'Visual Studio Code'}
+          size={24}
+          class='text-blue-500'
+          role='img'
+        />
+        <Figma size={24} aria-label='Figma' role='img' />
+        <Github size={24} aria-label={'GitHub'} role='img' />
+        <VisualStudioCode
+          aria-label={'Visual Studio Code'}
+          size={24}
+          class='text-blue-500'
+          role='img'
+        />
+        <Figma size={24} aria-label='Figma' role='img' /> -->
+      </Marquee>
+    </div>
+  </div>
+</section>
+<!-- END: BrandsWorkedWithSection -->

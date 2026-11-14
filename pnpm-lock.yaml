@@ -20,12 +20,18 @@ importers:
       '@fontsource-variable/nunito-sans':
         specifier: ^5.3.0
         version: 5.3.0
+      '@moonarc/core':
+        specifier: ^0.1.1
+        version: 0.1.1(astro@7.4.12(jiti@2.7.0)(yaml@2.9.1))
       '@shadcn/react':
         specifier: ^0.3.1
         version: 0.3.1(@types/react@19.3.0)(react@19.3.1)
       '@tailwindcss/vite':
         specifier: ^4.3.5
         version: 4.3.5(vite@8.3.8(jiti@2.7.0)(yaml@2.9.1))
+      '@thesvg/astro':
+        specifier: ^4.0.9
+        version: 4.0.9(astro@7.4.12(jiti@2.7.0)(yaml@2.9.1))
       '@types/react':
         specifier: ^19.3.0
         version: 19.3.0
@@ -44,6 +50,9 @@ importers:
       cn:
         specifier: ^0.5.2
         version: 0.5.2
+      countup.js:
+        specifier: ^2.10.1
+        version: 2.10.1
       date-fns:
         specifier: ^4.4.0
         version: 4.4.0
@@ -56,6 +65,9 @@ importers:
       lucide-react:
         specifier: ^1.72.0
         version: 1.72.0(@types/react@19.3.0)(react@19.3.1)
+      moonarc:
+        specifier: ^0.1.0
+        version: 0.1.0(@moonarc/core@0.1.1(astro@7.4.12(jiti@2.7.0)(yaml@2.9.1)))(astro@7.4.12(jiti@2.7.0)(yaml@2.9.1))
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -80,6 +92,9 @@ importers:
       shadcn:
         specifier: ^4.23.0
         version: 4.23.0
+      sharp:
+        specifier: ^0.35.5
+        version: 0.35.5
       shiki:
         specifier: ^4.6.0
         version: 4.6.0
@@ -99,6 +114,12 @@ importers:
       oxc-transform-react:
         specifier: ^0.158.0
         version: 0.158.0
+      prettier:
+        specifier: 3.10.1
+        version: 3.10.1
+      prettier-plugin-astro:
+        specifier: 1.1.2
+        version: 1.1.2(prettier@3.10.1)
 
 packages:
 
@@ -690,6 +711,18 @@ packages:
     resolution: {integrity: sha512-rgR9yxSaAJ+bcsi/XroT/S2AfPiIWloXAnrdfYSCms9ivVju0ishu/wW0J21Ho6+ZOR1r7RyeRbjiRuF87ix5Q==}
     engines: {node: '>=20'}
 
+  '@moonarc/core@0.1.1':
+    resolution: {integrity: sha512-/RGiPo0t8KwCM0d5DnF/zaY8PpiC64fVG46qBjnkLUHTTPMInVL0nVY0w5Q+90Tju33fkPm27/R07pDiZ4EDIw==}
+    peerDependencies:
+      astro: '>=5'
+      gsap: '>=3.12'
+      lenis: '>=1.1'
+    peerDependenciesMeta:
+      gsap:
+        optional: true
+      lenis:
+        optional: true
+
   '@napi-rs/wasm-runtime@1.2.6':
     resolution: {integrity: sha512-mRyDmEw9/fCDXCGfL1sbgIw/GUK0PVxRW4YwgPN61F3LQ+fSyoBFarJVzgGyhF6kRzEQZ0FejDqm4WLXSeqQmw==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=23.5.0}
@@ -843,6 +876,9 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [win32]
+
+  '@prettier/parse-srcset@3.1.0':
+    resolution: {integrity: sha512-FIRv2rZotO9NP/r66taYqD1zICpPiBbrECqjKV/xqNotqDxF7fLzzUeK+1RSRx9Tenk0DajR/GcRmTJ2qtHaKQ==}
 
   '@radix-ui/number@1.1.3':
     resolution: {integrity: sha512-Road2bidD0uu/1BGDOWNdPI06g0lIRy6IF9GZcIrDK2KGItfor8IQwQa+yM2ERgHM1MmHxaxpTzk0/Jp42lNfA==}
@@ -1804,6 +1840,12 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7 || ^8
 
+  '@thesvg/astro@4.0.9':
+    resolution: {integrity: sha512-Go7PPO/vfIY5Uz/QEzULOc3S0RxCXVSQxGazP1JxoApQ0416yYhnumRx0G8mIRJWBIjkAI8N1L/503e/lzetMw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      astro: '>=3'
+
   '@ts-morph/common@0.27.0':
     resolution: {integrity: sha512-Wf29UqxWDpc+i61k3oIOzcUfQt79PIT9y/MWfAGlrkjg6lBC1hwDECLXPVJAhWjiGbfBCxZd65F/LIZF3+jeJQ==}
 
@@ -2067,6 +2109,9 @@ packages:
   cookie@2.0.2:
     resolution: {integrity: sha512-SL0cVuEdETEp7pN0FuZb01toc3vnODEfVUCooxG1SJN0yIirh7JMb9X9bvfCFf0vzzbT68RdbKDHYTiWy7a7iw==}
     engines: {node: '>=22'}
+
+  countup.js@2.10.1:
+    resolution: {integrity: sha512-UHW/BsPDgVZfN919D4iu2HPv+jJxZUuaR3EhT0ScFZaD446GiQtkMTgOnOyJXdA2AewdlyUk9UvERlTHTbVpcw==}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -2751,6 +2796,12 @@ packages:
   minimist@1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
 
+  moonarc@0.1.0:
+    resolution: {integrity: sha512-Q9TOJmUWwkiZPzw0lWd4zbWc5U+LcyvoZjsaBjoqI4njab1DZq4tCwBffagPD8+v3ypYFD4MCDSnMzesnhLcww==}
+    peerDependencies:
+      '@moonarc/core': ^0.1.0
+      astro: '>=5'
+
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -2917,6 +2968,17 @@ packages:
   powershell-utils@0.2.1:
     resolution: {integrity: sha512-C+y9x90UElAddDZmV4qOx9W53B61PO7cIqWz2dQsWlwswuq4mr8NEwytdGKboYbQlGZ3awrkTeNvcZiZNHnQ8A==}
     engines: {node: '>=20'}
+
+  prettier-plugin-astro@1.1.2:
+    resolution: {integrity: sha512-vKyJW7Bb/QcIPUebEehbG+Tn+3yTIhoJ8ecm6NyJgcOj5T2xP+eF1IxY4zv809YyA69nV4ZFj+H9mdpC5cTaQA==}
+    engines: {node: '>=22.12.0'}
+    peerDependencies:
+      prettier: ^3.5.3
+
+  prettier@3.10.1:
+    resolution: {integrity: sha512-70vp3ZUYoPlFbF9uiTdXHUUCGEIp7d4+6p+8DYbkm2jP7x/3i/paXVF6dopSI3zd/CEitrZN1rc4i85xWmmXlg==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   pretty-ms@9.3.1:
     resolution: {integrity: sha512-HzMy3Geq23nVALD/M2LliU+F+M+gVNsvkQWWqeBZ8HDiCgzo6YPJ/Omrmtq24EFrIsk0a3EkQGEd7bDOo+IhGA==}
@@ -3099,6 +3161,13 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
+  s.color@0.0.15:
+    resolution: {integrity: sha512-AUNrbEUHeKY8XsYr/DYpl+qk5+aM+DChopnWOPEzn8YKzOhv4l2zH6LzZms3tOZP3wwdOyc0RmTciyi46HLIuA==}
+
+  sass-formatter@0.8.0:
+    resolution: {integrity: sha512-Nf4eMGE2O5vnJG7KPCRyksWS9gVKSYoUWtPeMXRRxwZSPVQhSGtL602xVYS65LvMkHmkvKa7xpauF0+/5pPwrg==}
+    hasBin: true
+
   satteri@0.11.7:
     resolution: {integrity: sha512-xDOSxkc1ew3z3IovIjmsqJaVHRXTGYJkPvx0LL/U6o90km8kSU+pmrZVvnWd5creJeE0UnvMEienlkPuYQdJaA==}
 
@@ -3228,6 +3297,9 @@ packages:
   strip-final-newline@4.0.0:
     resolution: {integrity: sha512-aulFJcD6YK8V1G7iRB5tigAP4TsHBZZrOV8pjV++zdUwmeV8uzbY7yn6h9MswN62adStNZFuCIx4haBnRuMDaw==}
     engines: {node: '>=18'}
+
+  suf-log@2.5.3:
+    resolution: {integrity: sha512-KvC8OPjzdNOe+xQ4XWJV2whQA0aM1kGVczMQ8+dStAO6KfEB140JEVQ9dE76ONZ0/Ylf67ni4tILPJB41U0eow==}
 
   svgo@4.1.0:
     resolution: {integrity: sha512-bkxnTg1kSU0guhIBmibA6UUhrQmPVA1XsQLN+ylCd+UWzbnLkySOcXpyk1mrl05f+pcaCx2eHb+sp6BgMZWX+Q==}
@@ -4046,8 +4118,7 @@ snapshots:
 
   '@fontsource-variable/nunito-sans@5.3.0': {}
 
-  '@img/colour@1.1.0':
-    optional: true
+  '@img/colour@1.1.0': {}
 
   '@img/sharp-darwin-arm64@0.35.5':
     optionalDependencies:
@@ -4181,6 +4252,10 @@ snapshots:
       '@modelcontextprotocol/core': 2.4.0
       zod: 4.6.7
 
+  '@moonarc/core@0.1.1(astro@7.4.12(jiti@2.7.0)(yaml@2.9.1))':
+    dependencies:
+      astro: 7.4.12(jiti@2.7.0)(yaml@2.9.1)
+
   '@napi-rs/wasm-runtime@1.2.6(@emnapi/core@2.0.0-beta.2)(@emnapi/runtime@2.0.0-beta.2)':
     dependencies:
       '@emnapi/core': 2.0.0-beta.2
@@ -4274,6 +4349,8 @@ snapshots:
 
   '@oxc-transform-react/binding-win32-x64-msvc@0.158.0':
     optional: true
+
+  '@prettier/parse-srcset@3.1.0': {}
 
   '@radix-ui/number@1.1.3': {}
 
@@ -5243,6 +5320,10 @@ snapshots:
       tailwindcss: 4.3.5
       vite: 8.3.8(jiti@2.7.0)(yaml@2.9.1)
 
+  '@thesvg/astro@4.0.9(astro@7.4.12(jiti@2.7.0)(yaml@2.9.1))':
+    dependencies:
+      astro: 7.4.12(jiti@2.7.0)(yaml@2.9.1)
+
   '@ts-morph/common@0.27.0':
     dependencies:
       fast-glob: 3.3.3
@@ -5548,6 +5629,8 @@ snapshots:
   cookie-es@1.2.3: {}
 
   cookie@2.0.2: {}
+
+  countup.js@2.10.1: {}
 
   cross-spawn@7.0.6:
     dependencies:
@@ -6123,6 +6206,11 @@ snapshots:
 
   minimist@1.2.8: {}
 
+  moonarc@0.1.0(@moonarc/core@0.1.1(astro@7.4.12(jiti@2.7.0)(yaml@2.9.1)))(astro@7.4.12(jiti@2.7.0)(yaml@2.9.1)):
+    dependencies:
+      '@moonarc/core': 0.1.1(astro@7.4.12(jiti@2.7.0)(yaml@2.9.1))
+      astro: 7.4.12(jiti@2.7.0)(yaml@2.9.1)
+
   mri@1.2.0: {}
 
   mrmime@2.0.1: {}
@@ -6289,6 +6377,15 @@ snapshots:
       source-map-js: 1.2.2
 
   powershell-utils@0.2.1: {}
+
+  prettier-plugin-astro@1.1.2(prettier@3.10.1):
+    dependencies:
+      '@astrojs/compiler-rs': 0.5.3
+      '@prettier/parse-srcset': 3.1.0
+      prettier: 3.10.1
+      sass-formatter: 0.8.0
+
+  prettier@3.10.1: {}
 
   pretty-ms@9.3.1:
     dependencies:
@@ -6527,6 +6624,12 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
+  s.color@0.0.15: {}
+
+  sass-formatter@0.8.0:
+    dependencies:
+      suf-log: 2.5.3
+
   satteri@0.11.7:
     dependencies:
       '@types/estree-jsx': 1.0.5
@@ -6623,7 +6726,6 @@ snapshots:
       '@img/sharp-win32-arm64': 0.35.5
       '@img/sharp-win32-ia32': 0.35.5
       '@img/sharp-win32-x64': 0.35.5
-    optional: true
 
   shebang-command@2.0.0:
     dependencies:
@@ -6706,6 +6808,10 @@ snapshots:
   strip-final-newline@2.0.0: {}
 
   strip-final-newline@4.0.0: {}
+
+  suf-log@2.5.3:
+    dependencies:
+      s.color: 0.0.15
 
   svgo@4.1.0:
     dependencies:

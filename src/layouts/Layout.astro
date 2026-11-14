@@ -1,7 +1,8 @@
 ---
-import { TooltipProvider } from "@/components/ui/tooltip";
-import "../styles/global.css";
-
+import Footer from '@/components/footer.astro';
+import Header from '@/components/header.astro';
+import { TooltipProvider } from '@/components/ui/tooltip';
+import '../styles/global.css';
 
 interface Props {
   title: string;
@@ -13,30 +14,56 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Sunrisers Digital Hub</title>
-    <meta name="description" content={"Grow your business with Sunrisers Digital Hub, a digital marketing agency in Bangalore offering SEO, Google Ads, social media marketing, website development and AI search visibility."} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={"Grow your business with Sunrisers Digital Hub, a digital marketing agency in Bangalore offering SEO, Google Ads, social media marketing, website development and AI search visibility."} />
-    <meta property="og:image" content={"https://sunrisersdigitalhub.com/og-image.png"} />
-    <meta property="og:url" content={"https://sunrisersdigitalhub.com"} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={"Grow your business with Sunrisers Digital Hub, a digital marketing agency in Bangalore offering SEO, Google Ads, social media marketing, website development and AI search visibility."} />
-    <meta name="twitter:image" content={"https://sunrisersdigitalhub.com/og-image.png"} />
-    <meta name="twitter:site" content="@sunrisersdh" />
-    <meta name="twitter:creator" content="@sunrisersdh" />
-    <meta name="keywords" content="digital marketing agency in Bangalore Bangalore, digital marketing company in Bangalore, digital marketing services in Bangalore, SEO services in Bangalore, SEO agency in Bangalore, Google Ads management in Bangalore, social media marketing agency in Bangalore, website development company in Bangalore, website design company in Bangalore, lead generation services in Bangalore, AI search optimization, AEO and GEO" />
-	</head>
-	<body>
+<html lang='en' class='scroll-smooth'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='icon' href='/favicon.ico' />
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title} | Sunrisers Digital Hub</title>
+    <meta
+      name='description'
+      content={
+        'Grow your business with Sunrisers Digital Hub, a digital marketing agency in Bangalore offering SEO, Google Ads, social media marketing, website development and AI search visibility.'
+      }
+    />
+    <meta property='og:title' content={title} />
+    <meta
+      property='og:description'
+      content={
+        'Grow your business with Sunrisers Digital Hub, a digital marketing agency in Bangalore offering SEO, Google Ads, social media marketing, website development and AI search visibility.'
+      }
+    />
+    <meta
+      property='og:image'
+      content={'https://sunrisersdigitalhub.com/og-image.png'}
+    />
+    <meta property='og:url' content={'https://sunrisersdigitalhub.com'} />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:title' content={title} />
+    <meta
+      name='twitter:description'
+      content={
+        'Grow your business with Sunrisers Digital Hub, a digital marketing agency in Bangalore offering SEO, Google Ads, social media marketing, website development and AI search visibility.'
+      }
+    />
+    <meta
+      name='twitter:image'
+      content={'https://sunrisersdigitalhub.com/og-image.png'}
+    />
+    <meta name='twitter:site' content='@sunrisersdh' />
+    <meta name='twitter:creator' content='@sunrisersdh' />
+    <meta
+      name='keywords'
+      content='digital marketing agency in Bangalore Bangalore, digital marketing company in Bangalore, digital marketing services in Bangalore, SEO services in Bangalore, SEO agency in Bangalore, Google Ads management in Bangalore, social media marketing agency in Bangalore, website development company in Bangalore, website design company in Bangalore, lead generation services in Bangalore, AI search optimization, AEO and GEO'
+    />
+  </head>
+  <body class='bg-foreground text-muted-foreground antialiased selection:bg-primary selection:text-primary-foreground'>
     <TooltipProvider>
+      <Header />
       <slot />
+      <Footer />
     </TooltipProvider>
-	</body>
+  </body>
 </html>

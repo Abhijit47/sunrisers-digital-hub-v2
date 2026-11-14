@@ -1,0 +1,227 @@
+---
+import { ArrowRightCircle } from 'lucide-react';
+import { Button } from './ui/button';
+
+const year = new Date().getFullYear();
+---
+
+<!-- BEGIN: MainFooter -->
+<footer
+  class='bg-brand-dark text-slate-400 pt-16 pb-8 border-t border-slate-800'
+  data-purpose='site-footer'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <!-- Top Grid of Footer Links -->
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-14 border-b border-slate-800'>
+      <!-- Brand Info -->
+      <div class='lg:col-span-4'>
+        <div class='flex items-center gap-2 mb-4'>
+          <svg
+            class='w-9 h-9'
+            fill='none'
+            viewBox='0 0 48 48'
+            xmlns='http://www.w3.org/2000/svg'>
+            <path
+              d='M12 28C14.2 24.5 18 22 24 22C30 22 33.8 24.5 36 28'
+              stroke='#F36C21'
+              stroke-linecap='round'
+              stroke-width='3.5'></path>
+            <path
+              d='M7 32C10.5 28 16 25 24 25C32 25 37.5 28 41 32'
+              stroke='#F36C21'
+              stroke-linecap='round'
+              stroke-width='3'></path>
+            <path
+              d='M24 10V14M14 14L16.8 16.8M34 14L31.2 16.8'
+              stroke='#F36C21'
+              stroke-linecap='round'
+              stroke-width='3'></path>
+            <path
+              d='M9 38L18 31L27 34L39 24'
+              stroke='#0077E6'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='3.5'></path>
+          </svg>
+          <div class='leading-none'>
+            <span class='text-lg font-black tracking-tight text-white block'>
+              SUNRISERS
+            </span>
+            <span class='text-[8px] font-bold tracking-[0.24em] text-brand-orange block'>
+              DIGITAL HUB
+            </span>
+          </div>
+        </div>
+        <p class='text-xs text-slate-400 mb-6 font-medium'>
+          Strategy. Marketing. Automation. Growth.
+        </p>
+        <div class='flex items-center gap-3 text-slate-300'>
+          <a
+            aria-label='LinkedIn'
+            class='w-8 h-8 rounded-full bg-slate-800/80 hover:bg-brand-orange hover:text-white flex items-center justify-center transition-colors text-xs'
+            href='#'>
+            <i class='fa-brands fa-linkedin-in'></i>
+          </a>
+          <a
+            aria-label='Instagram'
+            class='w-8 h-8 rounded-full bg-slate-800/80 hover:bg-brand-orange hover:text-white flex items-center justify-center transition-colors text-xs'
+            href='#'>
+            <i class='fa-brands fa-instagram'></i>
+          </a>
+          <a
+            aria-label='YouTube'
+            class='w-8 h-8 rounded-full bg-slate-800/80 hover:bg-brand-orange hover:text-white flex items-center justify-center transition-colors text-xs'
+            href='#'>
+            <i class='fa-brands fa-youtube'></i>
+          </a>
+          <a
+            aria-label='Facebook'
+            class='w-8 h-8 rounded-full bg-slate-800/80 hover:bg-brand-orange hover:text-white flex items-center justify-center transition-colors text-xs'
+            href='#'>
+            <i class='fa-brands fa-facebook-f'></i>
+          </a>
+        </div>
+      </div>
+      <!-- Quick Links -->
+      <div class='lg:col-span-2'>
+        <h4 class='text-xs uppercase tracking-wider font-extrabold text-white mb-4'>
+          Quick Links
+        </h4>
+        <ul class='space-y-2.5 text-xs'>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Home
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              About Us
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Services
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Case Studies
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Our Services -->
+      <div class='lg:col-span-2'>
+        <h4 class='text-xs uppercase tracking-wider font-extrabold text-white mb-4'>
+          Our Services
+        </h4>
+        <ul class='space-y-2.5 text-xs'>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Performance Marketing
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Lead Generation
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Social Media Management
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Marketing Automation
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Growth Consulting
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Industries -->
+      <div class='lg:col-span-2'>
+        <h4 class='text-xs uppercase tracking-wider font-extrabold text-white mb-4'>
+          Industries
+        </h4>
+        <ul class='space-y-2.5 text-xs'>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Real Estate
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Healthcare
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Education
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              D2C Brands
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Travel &amp; Tourism
+            </a>
+          </li>
+          <li>
+            <a class='hover:text-brand-orange transition-colors' href='#'>
+              Restaurants
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Stay Updated -->
+      <div class='lg:col-span-2'>
+        <h4 class='text-xs uppercase tracking-wider font-extrabold text-white mb-4'>
+          Stay Updated
+        </h4>
+        <p class='text-xs text-slate-400 mb-3 leading-relaxed'>
+          Get actionable marketing insights and growth tips.
+        </p>
+        <form class='flex items-center' onsubmit='event.preventDefault()'>
+          <input
+            class='w-full bg-white text-slate-800 text-xs px-3 py-2 rounded-l-lg border-none focus:ring-1 focus:ring-brand-orange'
+            placeholder='Enter your email'
+            required=''
+            type='email'
+          />
+          <Button
+            aria-label='Subscribe'
+            className='px-3.5 py-2 rounded-r-lg text-xs font-bold transition-colors'
+            type='submit'>
+            <ArrowRightCircle />
+          </Button>
+        </form>
+      </div>
+    </div>
+    <!-- Bottom Copyright & Legal Links -->
+    <div class='pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-3'>
+      <p>© {year} Sunrisers Digital Hub. All Rights Reserved.</p>
+      <div class='flex items-center gap-4'>
+        <a class='hover:text-slate-200 transition-colors' href='#'>
+          Privacy Policy
+        </a>
+        <span>|</span>
+        <a class='hover:text-slate-200 transition-colors' href='#'>
+          Terms &amp; Conditions
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- END: MainFooter -->

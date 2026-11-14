@@ -1,0 +1,151 @@
+---
+import CountUpNumber from '@/components/CountUpNumber.astro';
+import {
+  CalendarCheckIcon,
+  ChartNoAxesCombinedIcon,
+  StarCheckIcon,
+  UsersRoundCollaborationIcon,
+} from 'lucide-react';
+---
+
+<!-- BEGIN: WhyChooseUsSection -->
+<section class='py-20 bg-background' data-purpose='why-choose-us'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <div class='grid grid-cols-1 lg:grid-cols-12 gap-10 items-center'>
+      <!-- Left Side: Strategic Team Image -->
+      <div class='lg:col-span-5 rounded-3xl overflow-hidden shadow-xl border border-slate-100 relative group'>
+        <img
+          alt='Sunrisers Marketing Strategy Team Collaboration'
+          class='w-full h-100 lg:h-110 object-cover group-hover:scale-105 transition-transform duration-500'
+          src='https://lh3.googleusercontent.com/aida/ALJJyrDLWC-GnXmiiziMScKk38nF3Sv88F823QlZ0AHEG950-4Tv8Ri2PoKXPZ-k5iKZU3cnsi5syf2u2IrIQEU9K6BZ7EcRPYrV8ncKYXK8a2qcYTdRTXe7GJfvjqlfh9zaLT-3mSe3MYNzhltCbbvKpbAh4w6wjzAC2Ch3caRm3Hd6np2TJvoLSmFuLRepCt4G6GjmbfhHas5MFSY3GqqVkD_LvBeZURGXlt9XKUTYseoX'
+        />
+      </div>
+      <!-- Middle & Right Content -->
+      <div class='lg:col-span-7 flex flex-col md:flex-row gap-8 lg:gap-10 justify-between items-start md:items-center'>
+        <!-- Features List -->
+        <div class='flex-1'>
+          <div class='flex items-center gap-2 mb-2'>
+            <span class='w-5 h-1 bg-brand-orange rounded-full'></span>
+            <span class='text-xs uppercase tracking-wider font-extrabold text-brand-orange'>
+              WHY CHOOSE US
+            </span>
+          </div>
+          <h2 class='text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6'>
+            Your Strategic Partner
+            <br class='hidden sm:inline' />
+            for Sustainable Growth
+          </h2>
+          <!-- Checklist items -->
+          <ul class='space-y-4 text-sm font-semibold text-slate-700'>
+            <li class='flex items-center gap-3'>
+              <span class='w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 text-xs'>
+                <i class='fa-solid fa-check'></i>
+              </span>
+              <span>Strategy-First, Performance-Focused Approach</span>
+            </li>
+            <li class='flex items-center gap-3'>
+              <span class='w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 text-xs'>
+                <i class='fa-solid fa-check'></i>
+              </span>
+              <span>Data-Driven Execution &amp; Transparent Reporting</span>
+            </li>
+            <li class='flex items-center gap-3'>
+              <span class='w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 text-xs'>
+                <i class='fa-solid fa-check'></i>
+              </span>
+              <span>Industry-Specific &amp; Customized Solutions</span>
+            </li>
+            <li class='flex items-center gap-3'>
+              <span class='w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 text-xs'>
+                <i class='fa-solid fa-check'></i>
+              </span>
+              <span>End-to-End Support from Strategy to Results</span>
+            </li>
+          </ul>
+        </div>
+        <!-- Vertical Metric Stack -->
+        <div class='w-full md:w-auto md:border-l md:border-slate-200 md:pl-8 space-y-6 pt-4 md:pt-0'>
+          <!-- Metric 1 -->
+          <div class='flex items-center gap-3.5'>
+            <div>
+              <UsersRoundCollaborationIcon className='w-5 h-5 text-muted-foreground' />
+            </div>
+            <div>
+              <p>
+                <CountUpNumber
+                  className='text-xl font-black text-muted-foreground leading-none'
+                  end={500}
+                  suffix='+'
+                  autoAnimate={true}
+                  useIndianSeparators={true}
+                />
+              </p>
+              <p class='text-xs text-slate-500 font-medium'>
+                Projects Delivered
+              </p>
+            </div>
+          </div>
+          <!-- Metric 2 -->
+          <div class='flex items-center gap-3.5'>
+            <div>
+              <ChartNoAxesCombinedIcon className='w-5 h-5 text-muted-foreground' />
+            </div>
+            <div>
+              <p>
+                <CountUpNumber
+                  className='text-xl font-black text-muted-foreground leading-none'
+                  end={100}
+                  suffix='+'
+                  autoAnimate={true}
+                  useIndianSeparators={true}
+                />
+              </p>
+              <p class='text-xs text-slate-500 font-medium'>Businesses Grown</p>
+            </div>
+          </div>
+          <!-- Metric 3 -->
+          <div class='flex items-center gap-3.5'>
+            <div>
+              <CalendarCheckIcon className='w-5 h-5 text-muted-foreground' />
+            </div>
+            <div>
+              <p>
+                <CountUpNumber
+                  className='text-xl font-black text-muted-foreground leading-none'
+                  end={8}
+                  suffix='+'
+                  autoAnimate={true}
+                  useIndianSeparators={true}
+                />
+              </p>
+              <p class='text-xs text-slate-500 font-medium'>
+                Years of Experience
+              </p>
+            </div>
+          </div>
+          <!-- Metric 4 -->
+          <div class='flex items-center gap-3.5'>
+            <div>
+              <StarCheckIcon className='w-5 h-5 text-muted-foreground' />
+            </div>
+            <div>
+              <p>
+                <CountUpNumber
+                  className='text-xl font-black text-muted-foreground leading-none'
+                  end={4.8}
+                  suffix='/5'
+                  autoAnimate={true}
+                  useIndianSeparators={true}
+                />
+              </p>
+              <p class='text-xs text-slate-500 font-medium'>
+                Client Satisfaction
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: WhyChooseUsSection -->

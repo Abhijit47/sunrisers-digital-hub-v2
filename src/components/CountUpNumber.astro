@@ -1,0 +1,93 @@
+---
+import { cn } from '@/lib/utils';
+
+interface Props {
+  className?: string;
+  end?: number;
+  start?: number;
+  duration?: number;
+  decimal?: string;
+  prefix?: string;
+  suffix?: string;
+  autoAnimate?: boolean;
+  useIndianSeparators?: boolean;
+  decimalPlaces?: number;
+  separator?: string;
+}
+
+const {
+  end,
+  start = 0,
+  duration = 2,
+  prefix = '',
+  suffix = '',
+  autoAnimate = true,
+  useIndianSeparators = true,
+  decimalPlaces = 0,
+  decimal,
+  className,
+  separator,
+} = Astro.props;
+---
+
+<span
+  class={cn('countup-target', className)}
+  data-end={end}
+  data-start={start}
+  data-duration={duration}
+  data-decimal={decimal}
+  data-prefix={prefix}
+  data-suffix={suffix}
+  data-auto-animate={String(autoAnimate)}
+  data-use-indian-separators={String(useIndianSeparators)}
+  data-decimal-places={decimalPlaces}
+  data-separator={separator}>
+  {prefix}
+  {start}
+  {suffix}
+</span>
+
+<script>
+  import { CountUp, type CountUpOptions } from 'countup.js';
+
+  function initCountUps() {
+    const targets = document.querySelectorAll('.countup-target');
+
+    targets.forEach((el) => {
+      if (!(el instanceof HTMLElement) || el.dataset.initialized) return;
+      el.dataset.initialized = 'true';
+
+      const endVal = Number(el.dataset.end ?? 0);
+      const autoAnimate = el.dataset.autoAnimate === 'true';
+
+      const options: CountUpOptions = {
+        startVal: Number(el.dataset.start ?? 0),
+        duration: Number(el.dataset.duration ?? 2),
+        decimalPlaces: Number(el.dataset.decimals ?? 0),
+        prefix: el.dataset.prefix,
+        suffix: el.dataset.suffix,
+        autoAnimate,
+        autoAnimateOnce: false,
+        useIndianSeparators: el.dataset.useIndianSeparators === 'true',
+        decimal: el.dataset.decimal,
+        separator: el.dataset.separator,
+      };
+
+      const counter = new CountUp(el, endVal, options);
+
+      if (counter.error) {
+        console.error(counter.error);
+        return;
+      }
+
+      // If autoAnimate is false, start immediately on load
+      if (!autoAnimate) {
+        counter.start();
+      }
+    });
+  }
+
+  // Run on initial load and after Astro View Transitions
+  initCountUps();
+  document.addEventListener('astro:page-load', initCountUps);
+</script>

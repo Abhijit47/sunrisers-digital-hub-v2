@@ -1,0 +1,16 @@
+---
+interface Props {
+  error: unknown;
+}
+
+const { error } = Astro.props;
+---
+
+<main class='max-w-7xl mx-auto' transition:animate='slide'>
+  <h1 class='text-4xl font-bold text-center mt-20'>
+    500 - Internal Server Error
+  </h1>
+  <p class='text-center mt-4 text-lg'>
+    {error instanceof Error ? error.message : 'Unknown error'}
+  </p>
+</main>

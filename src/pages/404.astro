@@ -1,0 +1,52 @@
+---
+import Link from 'astro-typesafe-routes/link';
+
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '../components/ui/button';
+
+import {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+} from '@/components/ui/empty';
+import NotFoundLayout from '@/layouts/NotFoundLayout.astro';
+import { MessageCircleWarningIcon } from 'lucide-react';
+import '../styles/global.css';
+
+const pathname = Astro.request.url.split('/')[3] || '/';
+---
+
+<NotFoundLayout>
+  <main
+    class='max-w-7xl mx-auto flex h-full w-full items-center justify-center'
+    transition:animate='slide'>
+    <Empty className='border border-dashed'>
+      <EmptyHeader>
+        <EmptyMedia variant='icon'>
+          <MessageCircleWarningIcon />
+        </EmptyMedia>
+        <EmptyTitle>
+          <h1 class='text-4xl font-bold text-center mt-20'>
+            404 - Page Not Found
+          </h1>
+        </EmptyTitle>
+        <EmptyDescription>
+          <p class='text-center mt-4 text-lg'>
+            The page you are looking for does not exist. Please check the URL or
+            return to the homepage.
+          </p>
+        </EmptyDescription>
+      </EmptyHeader>
+      <EmptyContent>
+        <Link
+          class={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
+          to='/'>
+          Go back to Home
+        </Link>
+      </EmptyContent>
+    </Empty>
+  </main>
+</NotFoundLayout>

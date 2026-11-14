@@ -2,6 +2,8 @@
 import Footer from '@/components/footer.astro';
 import Header from '@/components/header.astro';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import { ClientRouter } from 'astro:transitions';
+
 import '../styles/global.css';
 
 interface Props {
@@ -14,7 +16,11 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<html lang='en' class='scroll-smooth'>
+<html
+  lang='en'
+  class='scroll-smooth'
+  transition:name='root'
+  transition:animate='none'>
   <head>
     <meta charset='utf-8' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
@@ -58,6 +64,7 @@ const { title } = Astro.props;
       name='keywords'
       content='digital marketing agency in Bangalore Bangalore, digital marketing company in Bangalore, digital marketing services in Bangalore, SEO services in Bangalore, SEO agency in Bangalore, Google Ads management in Bangalore, social media marketing agency in Bangalore, website development company in Bangalore, website design company in Bangalore, lead generation services in Bangalore, AI search optimization, AEO and GEO'
     />
+    <ClientRouter />
   </head>
   <body class='bg-foreground text-muted-foreground antialiased selection:bg-primary selection:text-primary-foreground'>
     <TooltipProvider>
@@ -67,3 +74,60 @@ const { title } = Astro.props;
     </TooltipProvider>
   </body>
 </html>
+
+<style is:global>
+  @keyframes bump {
+    0% {
+      opacity: 0;
+      transform: scale(1) translateX(200px);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateX(0);
+    }
+  }
+
+  @keyframes pixelateOut {
+    0% {
+      filter: blur(0px);
+      opacity: 1;
+    }
+    100% {
+      filter: blur(40px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes pixelateIn {
+    0% {
+      filter: blur(40px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes wipeOut {
+    from {
+      clip-path: inset(0 0 0 0);
+    }
+    to {
+      clip-path: inset(0 0 100% 0);
+    }
+  }
+
+  @keyframes wipeIn {
+    from {
+      clip-path: inset(100% 0 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+</style>

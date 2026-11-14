@@ -8,6 +8,12 @@ import OurServicesSection from '@/components/home/OurServicesSection.astro';
 import PreFooterBannerCTA from '@/components/home/PreFooterBannerCTA.astro';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection.astro';
 import Layout from '@/layouts/Layout.astro';
+
+import { createRoute } from 'astro-typesafe-routes/create-route';
+
+export const Route = createRoute({
+  routeId: '/',
+});
 ---
 
 <Layout title='Home'>

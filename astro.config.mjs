@@ -5,6 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
 
+import astroTypesafeRoutes from "astro-typesafe-routes";
 import moonarc from "moonarc";
 
 // https://astro.build/config
@@ -20,5 +21,6 @@ export default defineConfig({
       },
     }),
     moonarc(),
+    astroTypesafeRoutes(),
   ],
 });

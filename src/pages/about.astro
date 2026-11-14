@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import { createRoute } from 'astro-typesafe-routes/create-route';
+
+export const Route = createRoute({
+  routeId: '/about',
+});
+
+const pathname = Astro.request.url.split('/')[3] || '/';
+console.log('pathname', pathname);
+---
+
+<Layout title='About'>
+  <main class='max-w-7xl mx-auto'>
+    <h1>{pathname}</h1>
+  </main>
+</Layout>

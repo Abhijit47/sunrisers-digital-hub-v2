@@ -5,6 +5,7 @@ import type { RouteId } from 'astro-typesafe-routes/path';
 import { Image } from 'astro:assets';
 import { ArrowRightCircleIcon } from 'lucide-react';
 import Logo from '../../public/logo.png';
+import MobileNav from './mobile-nav.tsx';
 import { buttonVariants } from './ui/button';
 
 const navlinks = [
@@ -31,52 +32,6 @@ const pathname = Astro.request.url.split('/')[3] || '/';
         inferSize={true}
         class={'w-auto h-12'}
       />
-      <!-- <span class='flex items-center'>
-        <svg
-          class='w-10 h-10 transform group-hover:scale-105 transition-transform'
-          fill='none'
-          viewBox='0 0 48 48'
-          xmlns='http://www.w3.org/2000/svg'>
-          <path
-            d='M12 28C14.2 24.5 18 22 24 22C30 22 33.8 24.5 36 28'
-            stroke='#F36C21'
-            stroke-linecap='round'
-            stroke-width='3.5'></path>
-          <path
-            d='M7 32C10.5 28 16 25 24 25C32 25 37.5 28 41 32'
-            stroke='#F36C21'
-            stroke-linecap='round'
-            stroke-width='3'></path>
-          <path
-            d='M24 10V14M14 14L16.8 16.8M34 14L31.2 16.8'
-            stroke='#F36C21'
-            stroke-linecap='round'
-            stroke-width='3'></path>
-          <path
-            d='M9 38L18 31L27 34L39 24'
-            stroke='#0077E6'
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            stroke-width='3.5'></path>
-          <rect fill='#0077E6' height='6' rx='1' width='4' x='14' y='32'></rect>
-          <rect fill='#0077E6' height='9' rx='1' width='4' x='22' y='29'></rect>
-          <rect
-            fill='#0077E6'
-            height='14'
-            rx='1'
-            width='4'
-            x='30'
-            y='24'></rect>
-        </svg>
-        <span class='ml-2 flex flex-col leading-none'>
-          <span class='text-xl font-extrabold tracking-tight text-slate-900 font-sans'>
-            SUNRISERS
-          </span>
-          <span class='text-[9px] font-bold tracking-[0.24em] text-brand-orange'>
-            DIGITAL HUB
-          </span>
-        </span>
-      </span> -->
     </Link>
     <!-- Desktop Nav Links -->
     <nav class='hidden lg:flex items-center space-x-7 text-sm font-semibold text-slate-700'>
@@ -97,32 +52,6 @@ const pathname = Astro.request.url.split('/')[3] || '/';
           </Link>
         );
       })}
-      <!-- <a
-        class='text-muted-foreground border-b-2 border-border pb-0.5 font-bold'
-        href='/'>
-        Home
-      </a>
-      <a class='hover:text-brand-orange transition-colors' href='#'>
-        About
-      </a>
-      <div class='relative group cursor-pointer flex items-center gap-1 hover:text-brand-orange transition-colors'>
-        <span>Services</span>
-        <i class='fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:text-brand-orange transition-transform duration-200'></i>
-      </div>
-      <div class='relative group cursor-pointer flex items-center gap-1 hover:text-brand-orange transition-colors'>
-        <span>Industries</span>
-        <i class='fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:text-brand-orange transition-colors'></i>
-      </div>
-      <a class='hover:text-brand-orange transition-colors' href='#'>
-        Case Studies
-      </a>
-      <div class='relative group cursor-pointer flex items-center gap-1 hover:text-brand-orange transition-colors'>
-        <span>Resources</span>
-        <i class='fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:text-brand-orange transition-colors'></i>
-      </div>
-      <a class='hover:text-brand-orange transition-colors' href='#'>
-        Contact
-      </a> -->
     </nav>
     <!-- Primary Action CTA Button -->
     <div class='flex items-center gap-4'>
@@ -139,6 +68,7 @@ const pathname = Astro.request.url.split('/')[3] || '/';
         <span>Get a Free Consultation</span>
         <ArrowRightCircleIcon />
       </a>
+      <MobileNav client:visible pathname={pathname} />
     </div>
   </div>
 </header>

@@ -1,5 +1,6 @@
 ---
 import { cn } from '@/lib/utils';
+import { Image } from 'astro:assets';
 import {
   ArrowRightIcon,
   BarChart2Icon,
@@ -7,23 +8,25 @@ import {
   StarCheckIcon,
   Users2Icon,
 } from 'lucide-react';
+import HeroBG from '../../../public/hero.png';
 import CountUpNumber from '../CountUpNumber.astro';
 import { buttonVariants } from '../ui/button';
 ---
 
 <!-- BEGIN: HeroSection -->
 <section
-  class='relative bg-brand-midnight text-white overflow-hidden'
+  class='relative bg-background text-muted-foreground overflow-hidden'
   data-purpose='hero-container'>
   <!-- Right Background Architectural Glass Building Image -->
   <div class='absolute inset-y-0 right-0 w-full lg:w-3/5 pointer-events-none select-none z-0'>
-    <img
+    <Image
+      src={HeroBG}
       alt='Sunrisers Digital Hub Office Building'
-      class='w-full h-full object-cover object-center transform scale-105'
-      src='https://lh3.googleusercontent.com/aida/ALJJyrAvJvSPOMWdWBz226GCzRf-e5gBoN-O_VgM590C_BIZki3bOj39-OAYPtB44ST_P9MXBaoyKz8UA9ihHxmFhdRJkcvpP1yAICvi7OuImry4NgvCEDYl1qENqXEj-w3r1Sr5H7mPrraGdqk2g4n5-vRtJ242CFiP7ZsK6gC3jeIZh3Lz3LA7gVjbiTSWoDLjI0LECgihRyFsVVLcYEtx0jGwzhCNzhlR1kyLeR9vBKMUFw'
+      class='w-full h-full object-cover object-right'
+      inferSize
     />
     <!-- Subtle internal vignette and overlay blending into background -->
-    <div class='absolute inset-0 bg-linear-to-t from-brand-midnight via-transparent to-brand-midnight/40 lg:hidden'></div>
+    <div class='absolute inset-0 bg-linear-to-t from-background via-transparent to-background/40 lg:hidden'></div>
   </div>
   <!-- Gradient Left Overlay to ensure pristine legibility -->
   <div class='absolute inset-0 hero-glow-gradient z-0 pointer-events-none'></div>
@@ -31,13 +34,13 @@ import { buttonVariants } from '../ui/button';
     <div class='max-w-2xl'>
       <!-- Eyebrow Category -->
       <div class='flex items-center gap-2 mb-4'>
-        <span class='w-6 h-1 bg-brand-orange rounded-full inline-block'></span>
-        <span class='text-xs uppercase tracking-widest font-extrabold text-brand-orange'>
+        <span class='w-6 h-1 bg-primary rounded-full inline-block'></span>
+        <span class='text-xs uppercase tracking-widest font-extrabold text-muted-foreground'>
           DIGITAL GROWTH PARTNER
         </span>
       </div>
       <!-- Big Bold Hero Headline -->
-      <h1 class='text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.12] font-black text-white tracking-tight mb-5'>
+      <h1 class='text-4xl sm:text-5xl lg:text-[3.5rem] leading-[1.12] font-black text-background dark:text-foreground tracking-tight mb-5'>
         Strategic Digital
         <br />
         Marketing to Grow
@@ -45,7 +48,7 @@ import { buttonVariants } from '../ui/button';
         <span class='text-brand-orange'>Your Business</span>
       </h1>
       <!-- Subheading Paragraph -->
-      <p class='text-base sm:text-lg text-slate-300 font-normal leading-relaxed mb-8 max-w-xl'>
+      <p class='text-base sm:text-lg text-muted-foreground font-normal leading-relaxed mb-8 max-w-xl'>
         We help businesses generate qualified leads, increase conversions, and
         build a strong digital presence with strategy, technology, and
         performance marketing.
@@ -78,68 +81,68 @@ import { buttonVariants } from '../ui/button';
       </div>
 
       <!-- Floating Metrics Badge Bar -->
-      <div class='inline-grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 p-4 sm:p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-2xl'>
+      <div class='inline-grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 p-4 sm:p-5 rounded-2xl bg-background/10 backdrop-blur-md border border-background/15 shadow-2xl'>
         <!-- Stat 1 -->
         <div class='flex items-center gap-3'>
-          <BarChart2Icon className='size-5 text-accent' />
+          <BarChart2Icon className='size-5 text-primary' />
           <div>
             <p>
               <CountUpNumber
-                className='text-lg font-bold leading-tight text-white'
+                className='text-lg font-bold leading-tight text-background'
                 end={500}
                 suffix='+'
                 autoAnimate={true}
                 useIndianSeparators={true}
               />
             </p>
-            <p class='text-[11px] text-slate-300 font-medium whitespace-nowrap'>
+            <p class='text-[11px] text-muted-foreground font-medium whitespace-nowrap'>
               Projects Delivered
             </p>
           </div>
         </div>
         <!-- Stat 2 -->
         <div class='flex items-center gap-3'>
-          <Users2Icon className='size-5 text-accent' />
+          <Users2Icon className='size-5 text-primary' />
           <div>
             <p>
               <CountUpNumber
-                className='text-lg font-bold leading-tight text-white'
+                className='text-lg font-bold leading-tight text-background'
                 end={100}
                 suffix='+'
                 autoAnimate={true}
                 useIndianSeparators={true}
               />
             </p>
-            <p class='text-[11px] text-slate-300 font-medium whitespace-nowrap'>
+            <p class='text-[11px] text-muted-foreground font-medium whitespace-nowrap'>
               Businesses Grown
             </p>
           </div>
         </div>
         <!-- Stat 3 -->
         <div class='flex items-center gap-3'>
-          <StarCheckIcon className='size-5 text-accent' />
+          <StarCheckIcon className='size-5 text-primary' />
           <div>
             <p>
               <CountUpNumber
-                className='text-lg font-bold leading-tight text-white'
+                className='text-lg font-bold leading-tight text-background'
                 end={8}
                 suffix='+'
                 autoAnimate={true}
                 useIndianSeparators={true}
               />
             </p>
-            <p class='text-[11px] text-slate-300 font-medium whitespace-nowrap'>
+            <p class='text-[11px] text-muted-foreground font-medium whitespace-nowrap'>
               Years of Experience
             </p>
           </div>
         </div>
         <!-- Stat 4 -->
         <div class='flex items-center gap-3'>
-          <ShieldCheckIcon className='size-5 text-accent' />
+          <ShieldCheckIcon className='size-5 text-primary' />
           <div>
             <p>
               <CountUpNumber
-                className='text-lg font-bold leading-tight text-white'
+                className='text-lg font-bold leading-tight text-background'
                 suffix='/5'
                 autoAnimate={true}
                 useIndianSeparators={true}
@@ -147,7 +150,7 @@ import { buttonVariants } from '../ui/button';
                 decimalPlaces={1}
               />
             </p>
-            <p class='text-[11px] text-slate-300 font-medium whitespace-nowrap'>
+            <p class='text-[11px] text-muted-foreground font-medium whitespace-nowrap'>
               Client Satisfaction
             </p>
           </div>

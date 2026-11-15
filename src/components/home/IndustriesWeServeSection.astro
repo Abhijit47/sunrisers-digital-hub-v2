@@ -1,80 +1,71 @@
 ---
+import {
+  Building2Icon,
+  GraduationCapIcon,
+  HeartPulseIcon,
+  PlaneTakeoffIcon,
+  ShoppingBagIcon,
+  UtensilsCrossedIcon,
+} from 'lucide-react';
+
+const industryServed = [
+  {
+    name: 'Real Estate',
+    icon: Building2Icon,
+  },
+  {
+    name: 'Healthcare',
+    icon: HeartPulseIcon,
+  },
+  {
+    name: 'Education',
+    icon: GraduationCapIcon,
+  },
+  {
+    name: 'D2C Brands',
+    icon: ShoppingBagIcon,
+  },
+  {
+    name: 'Travel & Tourism',
+    icon: PlaneTakeoffIcon,
+  },
+  {
+    name: 'Restaurants',
+    icon: UtensilsCrossedIcon,
+  },
+];
 ---
 
 <!-- BEGIN: IndustriesWeServeSection -->
 <section
-  class='py-16 bg-slate-50 border-t border-slate-100'
+  class='py-16 bg-background border-t border-border'
   data-purpose='industries-badges'>
   <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
     <!-- Heading -->
     <div class='text-center mb-10'>
       <div class='inline-flex items-center gap-2 mb-2'>
-        <span class='w-4 h-1 bg-brand-orange rounded-full'></span>
-        <span class='text-xs uppercase tracking-wider font-extrabold text-brand-orange'>
+        <span class='w-4 h-1 bg-primary rounded-full'></span>
+        <span class='text-xs uppercase tracking-wider font-extrabold text-muted-foreground'>
           INDUSTRIES WE SERVE
         </span>
-        <span class='w-4 h-1 bg-brand-orange rounded-full'></span>
+        <span class='w-4 h-1 bg-primary rounded-full'></span>
       </div>
-      <h2 class='text-2xl sm:text-3xl font-extrabold text-slate-900'>
+      <h2 class='text-2xl sm:text-3xl font-extrabold text-foreground sm:leading-tight'>
         Digital Solutions for Diverse Businesses
       </h2>
     </div>
     <!-- Industry Cards / Pills Grid -->
     <div class='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-4'>
-      <!-- Real Estate -->
-      <div class='bg-white rounded-xl p-4 text-center border border-slate-200/90 shadow-sm hover:border-brand-orange hover:shadow-md transition-all group cursor-pointer flex flex-col items-center justify-center'>
-        <div class='text-blue-600 mb-2 group-hover:scale-110 transition-transform'>
-          <i class='fa-solid fa-city text-xl'></i>
+      {industryServed.map((industry) => (
+        <div class='bg-background rounded-xl p-4 text-center border border-background/90 shadow-sm hover:border-primary hover:shadow-md transition-all group cursor-pointer flex flex-col items-center justify-center'>
+          <div class='text-primary mb-2 group-hover:scale-110 transition-transform duration-300'>
+            <industry.icon className='size-4 md:size-6' />
+          </div>
+          <span class='text-xs sm:text-sm font-bold text-muted-foreground'>
+            {industry.name}
+          </span>
         </div>
-        <span class='text-xs sm:text-sm font-bold text-slate-800'>
-          Real Estate
-        </span>
-      </div>
-      <!-- Healthcare -->
-      <div class='bg-white rounded-xl p-4 text-center border border-slate-200/90 shadow-sm hover:border-brand-orange hover:shadow-md transition-all group cursor-pointer flex flex-col items-center justify-center'>
-        <div class='text-blue-600 mb-2 group-hover:scale-110 transition-transform'>
-          <i class='fa-solid fa-heart-pulse text-xl'></i>
-        </div>
-        <span class='text-xs sm:text-sm font-bold text-slate-800'>
-          Healthcare
-        </span>
-      </div>
-      <!-- Education -->
-      <div class='bg-white rounded-xl p-4 text-center border border-slate-200/90 shadow-sm hover:border-brand-orange hover:shadow-md transition-all group cursor-pointer flex flex-col items-center justify-center'>
-        <div class='text-blue-600 mb-2 group-hover:scale-110 transition-transform'>
-          <i class='fa-solid fa-graduation-cap text-xl'></i>
-        </div>
-        <span class='text-xs sm:text-sm font-bold text-slate-800'>
-          Education
-        </span>
-      </div>
-      <!-- D2C Brands -->
-      <div class='bg-white rounded-xl p-4 text-center border border-slate-200/90 shadow-sm hover:border-brand-orange hover:shadow-md transition-all group cursor-pointer flex flex-col items-center justify-center'>
-        <div class='text-blue-600 mb-2 group-hover:scale-110 transition-transform'>
-          <i class='fa-solid fa-bag-shopping text-xl'></i>
-        </div>
-        <span class='text-xs sm:text-sm font-bold text-slate-800'>
-          D2C Brands
-        </span>
-      </div>
-      <!-- Travel & Tourism -->
-      <div class='bg-white rounded-xl p-4 text-center border border-slate-200/90 shadow-sm hover:border-brand-orange hover:shadow-md transition-all group cursor-pointer flex flex-col items-center justify-center'>
-        <div class='text-blue-600 mb-2 group-hover:scale-110 transition-transform'>
-          <i class='fa-solid fa-plane-departure text-xl'></i>
-        </div>
-        <span class='text-xs sm:text-sm font-bold text-slate-800'>
-          Travel &amp; Tourism
-        </span>
-      </div>
-      <!-- Restaurants -->
-      <div class='bg-white rounded-xl p-4 text-center border border-slate-200/90 shadow-sm hover:border-brand-orange hover:shadow-md transition-all group cursor-pointer flex flex-col items-center justify-center'>
-        <div class='text-blue-600 mb-2 group-hover:scale-110 transition-transform'>
-          <i class='fa-solid fa-utensils text-xl'></i>
-        </div>
-        <span class='text-xs sm:text-sm font-bold text-slate-800'>
-          Restaurants
-        </span>
-      </div>
+      ))}
     </div>
   </div>
 </section>

@@ -1,0 +1,191 @@
+---
+import {
+  ChartLineIcon,
+  CheckCircle2Icon,
+  CompassIcon,
+  DollarSignIcon,
+  GemIcon,
+  StarCheckIcon,
+  TargetIcon,
+  UserRoundGroupIcon,
+} from 'lucide-react';
+
+const trustPoints = [
+  {
+    icon: ChartLineIcon,
+    title: 'ROI-Driven Culture',
+    description: 'Every dollar tracked against verified pipeline & revenue.',
+  },
+  {
+    icon: DollarSignIcon,
+    title: 'Full-Funnel Mastery',
+    description: 'From first click to retention & high customer LTV.',
+  },
+  {
+    icon: UserRoundGroupIcon,
+    title: 'Agile In-House Squad',
+    description: 'Dedicated media buyers, copywriters, and engineers.',
+  },
+];
+
+const corePillars = [
+  {
+    icon: TargetIcon,
+    subtitle: 'Mission',
+    title: 'Empowering 1,000+ Category Leaders',
+    description:
+      'To accelerate 1,000+ businesses into category leaders by combining deep consumer psychology with cutting-edge ad tech and automated growth systems.',
+  },
+  {
+    icon: CompassIcon,
+    subtitle: 'Vision',
+    title: 'The Most Trusted ROI Growth Partner',
+    description:
+      'To be the most trusted and ROI-focused digital growth partner for modern enterprises, startups, and D2C brands worldwide.',
+  },
+  {
+    icon: GemIcon,
+    subtitle: 'Core Values',
+    title: 'Principles That Guide Our Execution',
+    subitems: [
+      {
+        icon: CheckCircle2Icon,
+        title: 'Integrity & Transparency',
+        description:
+          'Zero hidden metrics, live reporting dashboards, and truthful attribution.',
+      },
+      {
+        icon: CheckCircle2Icon,
+        title: 'Relentless Innovation',
+        description:
+          'Staying consistently ahead of algorithmic shifts and AI performance tooling.',
+      },
+      {
+        icon: CheckCircle2Icon,
+        title: 'Client Centricity',
+        description:
+          'We act as your embedded growth squad with shared accountability.',
+      },
+    ],
+  },
+];
+
+const featureStories = [
+  "We started with a straightforward conviction: digital marketing shouldn't be a gamble of vanity metrics, but a predictable engine for commercial expansion. Our philosophy revolves around radical transparency, rapid testing, and compounding growth.",
+  'Whether scaling high-velocity D2C eCommerce or building high-ticket B2B client acquisition pipelines, we align creative storytelling with data science to engineer sustainable market advantages.',
+];
+---
+
+<!-- BEGIN: AboutUsSection -->
+<section
+  class='py-20 bg-background border-b border-border'
+  data-purpose='about-us'
+  id='about'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <!-- Section Header -->
+    <div class='max-w-3xl mb-14'>
+      <div class='flex items-center gap-2 mb-2.5'>
+        <span class='w-5 h-1 bg-primary rounded-full'></span>
+        <span class='text-xs uppercase tracking-wider font-extrabold text-muted-foreground'>
+          ABOUT SUNRISERS DIGITAL HUB
+        </span>
+      </div>
+      <h2 class='text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight mb-4'>
+        Empowering Ambitious Brands with Data-Driven Digital Growth
+      </h2>
+      <p class='text-sm sm:text-base text-muted-foreground leading-relaxed'>
+        Founded with a mission to bridge the gap between creative marketing and
+        measurable revenue, Sunrisers Digital Hub is a full-service growth
+        marketing agency delivering end-to-end performance, branding, and
+        automation systems.
+      </p>
+    </div>
+    <!-- Layout Grid -->
+    <div class='grid grid-cols-1 lg:grid-cols-12 gap-10 items-start'>
+      <!-- Left / Feature Story Block -->
+      <div class='lg:col-span-6 flex flex-col justify-between space-y-6'>
+        <div class='bg-foreground/5 rounded-2xl p-7 border border-background/90 shadow-sm'>
+          <h3 class='text-xl font-black text-foregound mb-3 tracking-tight'>
+            Our Story &amp; Vision
+          </h3>
+          <div class='space-y-3'>
+            {featureStories.map((story) => (
+              <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal'>
+                {story}
+              </p>
+            ))}
+          </div>
+        </div>
+        <!-- Core Milestones / Trust points -->
+        <div class='grid grid-cols-1 sm:grid-cols-3 gap-4'>
+          {trustPoints.map((point) => (
+            <div class='p-4 rounded-xl bg-background border border-background/80 shadow-sm flex flex-col justify-between group group-[hover]:shadow-lg transition-shadow duration-300'>
+              <div class='w-10 h-10 rounded-lg bg-primary/5 text-primary flex items-center justify-center mb-3'>
+                <point.icon />
+              </div>
+              <div>
+                <h4 class='text-sm font-bold text-foreground mb-1 leading-snug'>
+                  {point.title}
+                </h4>
+                <p class='text-[11px] text-muted-foreground leading-normal'>
+                  {point.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <!-- Callout banner -->
+        <div class='flex items-center gap-3.5 p-4 rounded-xl bg-primary/5 border border-primary/60 text-muted-foreground shadow-sm'>
+          <div class='w-8 h-8 rounded-full bg-primary text-background flex items-center justify-center shrink-0 text-sm'>
+            <StarCheckIcon className='size-4' />
+          </div>
+          <p class='text-xs sm:text-sm font-semibold text-muted-foreground leading-snug'>
+            Over <span class='text-primary font-bold'>8+ years</span> of scaling
+            100+ brands across India and global markets.
+          </p>
+        </div>
+      </div>
+      <!-- Right / 3 Core Pillars Cards -->
+      <div class='lg:col-span-6 space-y-4'>
+        {corePillars.map((pillar) => (
+          <div class='bg-background rounded-2xl p-6 border border-secondary/80 hover:border-brand-orange/40 transition-all duration-300 shadow-sm hover:shadow-md'>
+            <div class='flex items-start gap-4'>
+              <div class='w-11 h-11 rounded-xl bg-primary/5 text-primary flex items-center justify-center shrink-0 text-lg'>
+                <pillar.icon />
+              </div>
+              <div>
+                <div class='flex items-center gap-2 mb-1'>
+                  <span class='text-[10px] uppercase font-extrabold tracking-wider text-brand-orange'>
+                    {pillar.subtitle.toUpperCase()}
+                  </span>
+                </div>
+                <h4 class='text-base font-bold text-foreground mb-3'>
+                  {pillar.title}
+                </h4>
+                <p class='text-xs text-muted-foreground leading-relaxed'>
+                  {pillar.description}
+                </p>
+                {pillar.subitems && (
+                  <ul class='space-y-2.5 mt-3 text-xs text-muted-foreground leading-snug'>
+                    {pillar.subitems.map((subitem) => (
+                      <li class='flex items-start gap-2.5'>
+                        <subitem.icon className='size-4 text-primary mt-0.5' />
+                        <span>
+                          <strong class='text-foreground'>
+                            {subitem.title}:
+                          </strong>{' '}
+                          {subitem.description}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: AboutUsSection -->

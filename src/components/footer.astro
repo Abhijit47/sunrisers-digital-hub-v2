@@ -1,56 +1,63 @@
 ---
+import Link from 'astro-typesafe-routes/link';
+import { Image } from 'astro:assets';
 import { ArrowRightCircle } from 'lucide-react';
-import { Button } from './ui/button';
+import Logo from '../../public/logo.png';
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+} from './ui/input-group';
 
 const year = new Date().getFullYear();
+
+const footerLinks = {
+  quickLinks: [
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Contact', href: '/contact' },
+  ],
+  ourServices: [
+    { name: 'Performance Marketing', href: '/services/performance-marketing' },
+    { name: 'Lead Generation', href: '/services/lead-generation' },
+    {
+      name: 'Social Media Management',
+      href: '/services/social-media-management',
+    },
+    { name: 'Marketing Automation', href: '/services/marketing-automation' },
+    { name: 'Growth Consulting', href: '/services/growth-consulting' },
+  ],
+  industries: [
+    { name: 'Real Estate', href: '/industries/real-estate' },
+    { name: 'Healthcare', href: '/industries/healthcare' },
+    { name: 'Education', href: '/industries/education' },
+    { name: 'D2C Brands', href: '/industries/d2c-brands' },
+    { name: 'Travel & Tourism', href: '/industries/travel-tourism' },
+    { name: 'Restaurants', href: '/industries/restaurants' },
+  ],
+};
 ---
 
 <!-- BEGIN: MainFooter -->
 <footer
-  class='bg-brand-dark text-slate-400 pt-16 pb-8 border-t border-slate-800'
+  class='bg-foreground dark:bg-background text-muted-foreground pt-16 pb-8 border-t border-border'
   data-purpose='site-footer'>
   <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
     <!-- Top Grid of Footer Links -->
     <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-14 border-b border-slate-800'>
       <!-- Brand Info -->
       <div class='lg:col-span-4'>
-        <div class='flex items-center gap-2 mb-4'>
-          <svg
-            class='w-9 h-9'
-            fill='none'
-            viewBox='0 0 48 48'
-            xmlns='http://www.w3.org/2000/svg'>
-            <path
-              d='M12 28C14.2 24.5 18 22 24 22C30 22 33.8 24.5 36 28'
-              stroke='#F36C21'
-              stroke-linecap='round'
-              stroke-width='3.5'></path>
-            <path
-              d='M7 32C10.5 28 16 25 24 25C32 25 37.5 28 41 32'
-              stroke='#F36C21'
-              stroke-linecap='round'
-              stroke-width='3'></path>
-            <path
-              d='M24 10V14M14 14L16.8 16.8M34 14L31.2 16.8'
-              stroke='#F36C21'
-              stroke-linecap='round'
-              stroke-width='3'></path>
-            <path
-              d='M9 38L18 31L27 34L39 24'
-              stroke='#0077E6'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              stroke-width='3.5'></path>
-          </svg>
-          <div class='leading-none'>
-            <span class='text-lg font-black tracking-tight text-white block'>
-              SUNRISERS
-            </span>
-            <span class='text-[8px] font-bold tracking-[0.24em] text-brand-orange block'>
-              DIGITAL HUB
-            </span>
-          </div>
-        </div>
+        <Link class='flex items-center gap-2 mb-4' to='/'>
+          <Image
+            src={Logo}
+            alt='Sunrisers Digital Hub Logo'
+            inferSize={true}
+            class={'w-auto h-12'}
+          />
+        </Link>
         <p class='text-xs text-slate-400 mb-6 font-medium'>
           Strategy. Marketing. Automation. Growth.
         </p>
@@ -59,132 +66,141 @@ const year = new Date().getFullYear();
             aria-label='LinkedIn'
             class='w-8 h-8 rounded-full bg-slate-800/80 hover:bg-brand-orange hover:text-white flex items-center justify-center transition-colors text-xs'
             href='#'>
-            <i class='fa-brands fa-linkedin-in'></i>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='24'
+              height='24'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              stroke-width='2'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              class='icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin'>
+              <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+              <path d='M8 11v5' />
+              <path d='M8 8v.01' />
+              <path d='M12 16v-5' />
+              <path d='M16 16v-3a2 2 0 1 0 -4 0' />
+              <path d='M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10' />
+            </svg>
           </a>
           <a
             aria-label='Instagram'
             class='w-8 h-8 rounded-full bg-slate-800/80 hover:bg-brand-orange hover:text-white flex items-center justify-center transition-colors text-xs'
             href='#'>
-            <i class='fa-brands fa-instagram'></i>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='24'
+              height='24'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              stroke-width='2'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              class='icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram'>
+              <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+              <path d='M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10' />
+              <path d='M8.5 12a3.5 3.5 0 1 0 7 0a3.5 3.5 0 0 0 -7 0' />
+              <path d='M17 7v.01' />
+            </svg>
           </a>
           <a
             aria-label='YouTube'
             class='w-8 h-8 rounded-full bg-slate-800/80 hover:bg-brand-orange hover:text-white flex items-center justify-center transition-colors text-xs'
             href='#'>
-            <i class='fa-brands fa-youtube'></i>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='24'
+              height='24'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              stroke-width='2'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              class='icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube'>
+              <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+              <path d='M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8' />
+              <path d='M10 9l5 3l-5 3l0 -6' />
+            </svg>
           </a>
           <a
             aria-label='Facebook'
             class='w-8 h-8 rounded-full bg-slate-800/80 hover:bg-brand-orange hover:text-white flex items-center justify-center transition-colors text-xs'
             href='#'>
-            <i class='fa-brands fa-facebook-f'></i>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='24'
+              height='24'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              stroke-width='2'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              class='icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook'>
+              <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+              <path d='M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3' />
+            </svg>
           </a>
         </div>
       </div>
       <!-- Quick Links -->
-      <div class='lg:col-span-2'>
-        <h4 class='text-xs uppercase tracking-wider font-extrabold text-white mb-4'>
+      <div class='lg:col-span-2 space-y-4'>
+        <h4 class='text-xs uppercase tracking-wider font-extrabold text-background'>
           Quick Links
         </h4>
         <ul class='space-y-2.5 text-xs'>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Home
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              About Us
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Services
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Case Studies
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Contact
-            </a>
-          </li>
+          {footerLinks.quickLinks.map((link) => (
+            <li>
+              <a
+                class='hover:text-primary transition-colors block'
+                href={link.href}>
+                {link.name}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
+
       <!-- Our Services -->
-      <div class='lg:col-span-2'>
-        <h4 class='text-xs uppercase tracking-wider font-extrabold text-white mb-4'>
+      <div class='lg:col-span-2 space-y-4'>
+        <h4 class='text-xs uppercase tracking-wider font-extrabold text-background'>
           Our Services
         </h4>
         <ul class='space-y-2.5 text-xs'>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Performance Marketing
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Lead Generation
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Social Media Management
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Marketing Automation
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Growth Consulting
-            </a>
-          </li>
+          {footerLinks.ourServices.map((link) => (
+            <li>
+              <a
+                class='hover:text-primary transition-colors block'
+                href={link.href}>
+                {link.name}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
+
       <!-- Industries -->
-      <div class='lg:col-span-2'>
-        <h4 class='text-xs uppercase tracking-wider font-extrabold text-white mb-4'>
+      <div class='lg:col-span-2 space-y-4'>
+        <h4 class='text-xs uppercase tracking-wider font-extrabold text-background'>
           Industries
         </h4>
         <ul class='space-y-2.5 text-xs'>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Real Estate
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Healthcare
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Education
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              D2C Brands
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Travel &amp; Tourism
-            </a>
-          </li>
-          <li>
-            <a class='hover:text-brand-orange transition-colors' href='#'>
-              Restaurants
-            </a>
-          </li>
+          {footerLinks.industries.map((link) => (
+            <li>
+              <a
+                class='hover:text-primary transition-colors block'
+                href={link.href}>
+                {link.name}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
+
       <!-- Stay Updated -->
       <div class='lg:col-span-2'>
         <h4 class='text-xs uppercase tracking-wider font-extrabold text-white mb-4'>
@@ -194,18 +210,17 @@ const year = new Date().getFullYear();
           Get actionable marketing insights and growth tips.
         </p>
         <form class='flex items-center' onsubmit='event.preventDefault()'>
-          <input
-            class='w-full bg-white text-slate-800 text-xs px-3 py-2 rounded-l-lg border-none focus:ring-1 focus:ring-brand-orange'
-            placeholder='Enter your email'
-            required=''
-            type='email'
-          />
-          <Button
-            aria-label='Subscribe'
-            className='px-3.5 py-2 rounded-r-lg text-xs font-bold transition-colors'
-            type='submit'>
-            <ArrowRightCircle />
-          </Button>
+          <InputGroup>
+            <InputGroupInput placeholder='Type to search...' />
+            <InputGroupAddon align='inline-end' className='-mr-2.5!'>
+              <InputGroupButton
+                variant='secondary'
+                size={'icon-sm'}
+                type='submit'>
+                <ArrowRightCircle />
+              </InputGroupButton>
+            </InputGroupAddon>
+          </InputGroup>
         </form>
       </div>
     </div>

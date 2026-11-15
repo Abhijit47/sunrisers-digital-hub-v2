@@ -1,39 +1,57 @@
 ---
+import { cn } from '@/lib/utils';
+import { ArrowRightCircleIcon, MessageCircleMoreIcon } from 'lucide-react';
+import { buttonVariants } from '../ui/button';
 ---
 
 <!-- BEGIN: PreFooterBannerCTA -->
-<section class='py-14 bg-white' data-purpose='cta-banner' id='consultation'>
+<section
+  class='py-14 bg-background'
+  data-purpose='cta-banner'
+  id='consultation'>
   <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-    <div class='bg-linear-to-r from-[#eaf2fc] via-[#f1f6fe] to-[#e6f1fd] border border-blue-200/80 rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6'>
+    <div class='bg-linear-to-r from-primary/10 via-primary/15 to-primary/30 border border-background/80 rounded-3xl p-8 sm:p-10 shadow-sm flex flex-col lg:flex-row items-center justify-between gap-6'>
       <!-- Left Headings -->
       <div>
-        <h3 class='text-2xl sm:text-3xl font-black text-brand-dark tracking-tight leading-tight'>
+        <h3 class='text-2xl sm:text-3xl font-black text-muted-foreground tracking-tight leading-tight'>
           Ready to Grow
           <br class='hidden sm:inline' />
           Your Business Online?
         </h3>
       </div>
       <!-- Middle Description -->
-      <div class='lg:border-l-2 lg:border-blue-300/60 lg:pl-8 flex-1 max-w-sm'>
-        <p class='text-xs sm:text-sm font-medium text-slate-700 leading-snug'>
+      <div class='lg:border-l-2 lg:border-primary/60 lg:pl-8 flex-1 max-w-sm'>
+        <p class='text-xs sm:text-sm font-medium text-muted-foreground leading-snug'>
           Let's build a customized digital growth plan for your business.
         </p>
       </div>
       <!-- Action Buttons -->
       <div class='flex flex-wrap items-center gap-3'>
         <a
-          class='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-orange hover:bg-brand-orangeHover text-white text-xs sm:text-sm font-bold shadow-md shadow-brand-orange/20 transition-all duration-200'
+          class={cn(
+            buttonVariants({
+              variant: 'default',
+              size: 'lg',
+              class: 'rounded-full',
+            }),
+          )}
           href='#consultation'>
           <span>Get a Free Consultation</span>
-          <i class='fa-solid fa-arrow-right text-xs'></i>
+          <ArrowRightCircleIcon className='size-4 md:size-5' />
         </a>
         <a
-          class='inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 text-xs sm:text-sm font-bold shadow-sm transition-all duration-200'
+          class={cn(
+            buttonVariants({
+              variant: 'outline',
+              size: 'lg',
+              class: 'rounded-full',
+            }),
+          )}
           href='https://whatsapp.com'
           rel='noopener noreferrer'
           target='_blank'>
-          <i class='fa-brands fa-whatsapp text-emerald-500 text-base'></i>
           <span>WhatsApp Us</span>
+          <MessageCircleMoreIcon className='size-4 md:size-5 text-emerald-500' />
         </a>
       </div>
     </div>

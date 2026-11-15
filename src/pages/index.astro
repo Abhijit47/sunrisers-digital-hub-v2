@@ -1,4 +1,5 @@
 ---
+import AboutUsSection from '@/components/home/AboutUsSection.astro';
 import BrandsWorkedWithSection from '@/components/home/BrandsWorkedWithSection.astro';
 import CaseStudiesSection from '@/components/home/CaseStudiesSection.astro';
 import ClientTestimonialsSection from '@/components/home/ClientTestimonialsSection.astro';
@@ -8,7 +9,6 @@ import OurServicesSection from '@/components/home/OurServicesSection.astro';
 import PreFooterBannerCTA from '@/components/home/PreFooterBannerCTA.astro';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection.astro';
 import Layout from '@/layouts/Layout.astro';
-
 import { createRoute } from 'astro-typesafe-routes/create-route';
 
 export const Route = createRoute({
@@ -17,9 +17,10 @@ export const Route = createRoute({
 ---
 
 <Layout title='Home'>
-  <main class='max-w-7xl mx-auto' transition:animate='slide'>
+  <main transition:animate='slide'>
     <HeroSection />
     <OurServicesSection />
+    <AboutUsSection />
     <WhyChooseUsSection />
     <IndustriesWeServeSection />
     <CaseStudiesSection />

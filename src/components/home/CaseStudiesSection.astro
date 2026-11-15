@@ -2,11 +2,42 @@
 import { cn } from '@/lib/utils';
 import { ArrowRightCircleIcon } from 'lucide-react';
 import { Button, buttonVariants } from '../ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '../ui/card';
+
+const caseStudies = [
+  {
+    title: '50+ Leads in 20 Days',
+    description:
+      'Generated high-quality leads with just ₹5,000 ad spend (CPL ₹84).',
+    imageUrl: '/case-1.png',
+    link: '#',
+  },
+  {
+    title: '900+ Leads in 9 Months',
+    description: 'Built a consistent lead pipeline with Meta Ads & funnels.',
+    imageUrl: '/case-2.png',
+    link: '#',
+  },
+  {
+    title: '3.2x ROAS',
+    description:
+      'Scaled revenue with performance marketing & creative testing.',
+    imageUrl: '/case-3.png',
+    link: '#',
+  },
+];
 ---
 
 <!-- BEGIN: CaseStudiesSection -->
 <section
-  class='py-20 bg-brand-navy text-primary'
+  class='py-20 bg-foreground dark:bg-background text-primary'
   data-purpose='case-studies'
   id='work'>
   <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -19,7 +50,7 @@ import { Button, buttonVariants } from '../ui/button';
             CASE STUDIES
           </span>
         </div>
-        <h2 class='text-3xl sm:text-4xl font-extrabold text-accent tracking-tight'>
+        <h2 class='text-3xl sm:text-4xl font-extrabold tracking-tight text-background dark:text-foreground'>
           Real Business Results
         </h2>
       </div>
@@ -38,91 +69,34 @@ import { Button, buttonVariants } from '../ui/button';
     </div>
     <!-- 3 Case Study Cards Grid -->
     <div class='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8'>
-      <!-- Case Study 1: Real Estate -->
-      <div class='bg-background rounded-2xl overflow-hidden shadow-2xl flex flex-col text-slate-900 group'>
-        <div class='h-52 w-full overflow-hidden relative'>
-          <img
-            alt='Real Estate Case Study High Rise'
-            class='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
-            src='https://lh3.googleusercontent.com/aida/ALJJyrDk88ISxXmMn6FY1ooMt504Ys8WTvLqWADiKSn9IXrSrHKDd2mhFMmyCcWDEZN3sMO2Fa9H1T1KgylBtGI0fAYQJ78xf9TqmkyHerSPrzJhM9AcxXSbQ4hKB4GrPIa83opK4PRC2IMyNrnlKZVM2ITI_zCQOdLb2AQwce7d1G0MHYZVPtdqh0iHF6ndzD5ffLE6jp8UAx0x_7Jl0jx_AfksXAuodhU7pcU7l7AyGbGutw'
-          />
-        </div>
-        <div class='p-6 flex-1 flex flex-col justify-between bg-white'>
-          <div>
-            <span class='inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[11px] font-bold tracking-wide mb-3'>
-              Real Estate
-            </span>
-            <h3 class='text-xl font-black text-slate-900 mb-2'>
-              50+ Leads in 20 Days
-            </h3>
-            <p class='text-xs sm:text-sm text-slate-500 leading-relaxed mb-6'>
-              Generated high-quality leads with just ₹5,000 ad spend (CPL ₹84).
-            </p>
-          </div>
-          <div class='flex justify-end pt-2 border-t border-slate-100'>
-            <!-- <span class='w-8 h-8 rounded-full bg-brand-orange text-white flex items-center justify-center transform group-hover:translate-x-1 transition-transform'>
-              <i class='fa-solid fa-arrow-right text-xs'></i>
-            </span> -->
+      {caseStudies.map((caseStudy) => (
+        <Card className='group pt-0'>
+          <CardContent className='p-0'>
+            <div class='h-full w-full overflow-hidden relative aspect-video'>
+              <img
+                alt={caseStudy.title}
+                class='w-full h-full object-cover group-hover:scale-105 transition-transform rounded-t-lg duration-500'
+                src={caseStudy.imageUrl}
+              />
+            </div>
+          </CardContent>
+          <CardHeader>
+            <CardTitle>
+              <h3 class='text-xl font-black text-foreground mb-2'>
+                {caseStudy.title}
+              </h3>
+            </CardTitle>
+            <CardDescription>
+              <p>{caseStudy.description}</p>
+            </CardDescription>
+          </CardHeader>
+          <CardFooter className='mt-auto justify-end'>
             <Button className='rounded-full!' size={'icon-lg'}>
               <ArrowRightCircleIcon />
             </Button>
-          </div>
-        </div>
-      </div>
-      <!-- Case Study 2: Wellness & Coaching -->
-      <div class='bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col text-slate-900 group'>
-        <div class='h-52 w-full overflow-hidden relative'>
-          <img
-            alt='Wellness and Yoga Case Study'
-            class='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
-            src='https://lh3.googleusercontent.com/aida/ALJJyrAiz7UTUUN8awHPwqA3UqIfgdOImgvbGcDFxxVEZRRed9ts_MrTxc7oTn9NRd9ToxOE7XESbD8PpG6QrC2JtiIEEeDPfMO_W8Hw0HOklHKh-lwC8XUItoOO3LUj-1a_FoNXRr6PKdjxgxhPE9HqLeC2juieGjiZI9yOmNFU0LYCx-2Yc8i5XkMqvXruYAQpxJcS6lN2fJH-07SI61_rbbISbuM62CqlQz5a8isjdAdm'
-          />
-        </div>
-        <div class='p-6 flex-1 flex flex-col justify-between bg-white'>
-          <div>
-            <span class='inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[11px] font-bold tracking-wide mb-3'>
-              Wellness &amp; Coaching
-            </span>
-            <h3 class='text-xl font-black text-slate-900 mb-2'>
-              900+ Leads in 9 Months
-            </h3>
-            <p class='text-xs sm:text-sm text-slate-500 leading-relaxed mb-6'>
-              Built a consistent lead pipeline with Meta Ads &amp; funnels.
-            </p>
-          </div>
-          <div class='flex justify-end pt-2 border-t border-slate-100'>
-            <Button className='rounded-full!' size={'icon-lg'}>
-              <ArrowRightCircleIcon />
-            </Button>
-          </div>
-        </div>
-      </div>
-      <!-- Case Study 3: D2C Brand -->
-      <div class='bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col text-slate-900 group'>
-        <div class='h-52 w-full overflow-hidden relative'>
-          <img
-            alt='D2C Retail Shopping Bags Case Study'
-            class='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
-            src='https://lh3.googleusercontent.com/aida/ALJJyrC6VsY8wydEmLF7unUR99Fhr4XyYbN5WRBmV6BXfIyX8rVw2GmyecjY9exwl1C3YWAm2Dz1mCtBzd5SeVuDKCs28ZKrSHMu1QurWZyXMkbJuyM-n6F6oIOAzFnUG4Jdc1OWWmyRqpEImGampej8XEK3fOTAc3rwn1vX2Dz-nKnaVmmuObMLW0g0g995vsWNXdIOYQ6U37zqnBLgU-lE5nt-gtmwEXQplGoqcPPUh0a0'
-          />
-        </div>
-        <div class='p-6 flex-1 flex flex-col justify-between bg-white'>
-          <div>
-            <span class='inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[11px] font-bold tracking-wide mb-3'>
-              D2C Brand
-            </span>
-            <h3 class='text-xl font-black text-slate-900 mb-2'>3.2x ROAS</h3>
-            <p class='text-xs sm:text-sm text-slate-500 leading-relaxed mb-6'>
-              Scaled revenue with performance marketing &amp; creative testing.
-            </p>
-          </div>
-          <div class='flex justify-end pt-2 border-t border-slate-100'>
-            <Button className='rounded-full!' size={'icon-lg'}>
-              <ArrowRightCircleIcon />
-            </Button>
-          </div>
-        </div>
-      </div>
+          </CardFooter>
+        </Card>
+      ))}
     </div>
   </div>
 </section>

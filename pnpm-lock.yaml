@@ -44,6 +44,9 @@ importers:
       astro:
         specifier: ^7.4.12
         version: 7.4.12(@vercel/functions@3.11.3)(jiti@2.7.0)(yaml@2.9.1)
+      astro-swiper:
+        specifier: ^2.11.0
+        version: 2.11.0
       astro-typesafe-routes:
         specifier: ^5.2.2
         version: 5.2.2(astro@7.4.12(@vercel/functions@3.11.3)(jiti@2.7.0)(yaml@2.9.1))(react@19.3.1)(typescript@6.0.3)
@@ -2203,6 +2206,10 @@ packages:
     resolution: {integrity: sha512-FvWoWYfSCM6kRxCSH+MGLHIKKGRL6A6AW7Zek2O32REPQRdg131428uRTKMBYAeRd3XXAaHDS60Wpri7CdKDrA==}
     engines: {node: '>=4'}
 
+  astro-swiper@2.11.0:
+    resolution: {integrity: sha512-pCO+sKq4mRr9jQs+EQnAD9j/Qqm7UFHBQXHyuXvwVb7tSmQ8YubKuiBaCDxJVhyXPO/z0VD3f89daS/AmR4QNQ==}
+    engines: {node: '>=18', npm: '>=9.6.5', pnpm: '>=7.1.0'}
+
   astro-typesafe-routes@5.2.2:
     resolution: {integrity: sha512-vw9GBpagLXZzMquldCtXZQYo0/cKN4CFZ7DRQ9EiRIPf1z8GX6hUBVc1fYQJdfH7+NQ8lU812P2xpgWFZzUGxg==}
     peerDependencies:
@@ -3661,6 +3668,10 @@ packages:
     resolution: {integrity: sha512-bkxnTg1kSU0guhIBmibA6UUhrQmPVA1XsQLN+ylCd+UWzbnLkySOcXpyk1mrl05f+pcaCx2eHb+sp6BgMZWX+Q==}
     engines: {node: '>=16'}
     hasBin: true
+
+  swiper@14.4.0:
+    resolution: {integrity: sha512-6axnAuBsttFJe0gwsM5tT203/Bts0vcI+FwIX6dqFE4pUFVW6qrdRprNFQVxOYMW7V0S6A/KIqJ6JaPpNN2MCw==}
+    engines: {node: '>= 4.7.0'}
 
   systeminformation@5.33.21:
     resolution: {integrity: sha512-bkG5ftzjV7XahdI5tTHReUeJYSJLxJOGU3QDFhTvJDBKgEOCDehcsVXYPW/NY60QqQYGv5OI+izJ6uGTVCpK2w==}
@@ -6219,6 +6230,10 @@ snapshots:
     dependencies:
       tslib: 2.9.1
 
+  astro-swiper@2.11.0:
+    dependencies:
+      swiper: 14.4.0
+
   astro-typesafe-routes@5.2.2(astro@7.4.12(@vercel/functions@3.11.3)(jiti@2.7.0)(yaml@2.9.1))(react@19.3.1)(typescript@6.0.3):
     dependencies:
       astro: 7.4.12(@vercel/functions@3.11.3)(jiti@2.7.0)(yaml@2.9.1)
@@ -7710,6 +7725,8 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.1.1
       sax: 1.6.1
+
+  swiper@14.4.0: {}
 
   systeminformation@5.33.21: {}
 

@@ -1,5 +1,13 @@
 ---
-import { QuoteIcon, StarIcon } from 'lucide-react';
+import type { AstroSwiperOptions } from 'astro-swiper';
+import { Swiper, SwiperSlide, SwiperWrapper } from 'astro-swiper';
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  QuoteIcon,
+  StarIcon,
+} from 'lucide-react';
+import { Button } from '../ui/button';
 import {
   Card,
   CardDescription,
@@ -34,13 +42,52 @@ const testimonies = [
       'Great expertise in performance marketing and automation. They understand business goals and deliver measurable results.',
   },
 ];
+
+const repeatedTestimonials = Array.from(
+  { length: 6 },
+  () => testimonies,
+).flat();
+
+const isDev = import.meta.env.DEV;
+
+const opts: AstroSwiperOptions = {
+  // check options at https://swiperjs.com/swiper-api
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+    enabled: !isDev,
+  },
+  loop: true,
+  rewind: true,
+  grabCursor: true,
+  slidesPerView: 3,
+  spaceBetween: 20,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+  },
+  navigation: {
+    prevEl: '#client-success-stories-prev',
+    nextEl: '#client-success-stories-next',
+  },
+};
 ---
 
 <!-- BEGIN: ClientTestimonialsSection -->
 <section
   class='py-20 bg-background border-b border-border'
   data-purpose='client-testimonials'>
-  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6'>
     <!-- Section Title & Arrows -->
     <div class='flex items-end justify-between mb-12'>
       <div>
@@ -55,7 +102,7 @@ const testimonies = [
         </h2>
       </div>
       <!-- Slider Arrow Controls -->
-      <div class='flex items-center gap-2.5'>
+      <!-- <div class='flex items-center gap-2.5'>
         <button
           aria-label='Previous Testimonial'
           class='w-9 h-9 rounded-full border border-border hover:border-primary hover:text-brand-orange flex items-center justify-center text-slate-600 transition-colors'
@@ -68,10 +115,73 @@ const testimonies = [
           type='button'>
           <i class='fa-solid fa-chevron-right text-xs'></i>
         </button>
+      </div> -->
+
+      <!-- Slider Pagination Prev / Next Buttons -->
+      <div class='flex items-center gap-2'>
+        <Button
+          variant={'outline'}
+          size={'icon-lg'}
+          className='rounded-full'
+          id='client-success-stories-prev'>
+          <ChevronLeftIcon />
+        </Button>
+        <Button
+          variant={'outline'}
+          size={'icon-lg'}
+          className='rounded-full'
+          id='client-success-stories-next'>
+          <ChevronRightIcon />
+        </Button>
       </div>
     </div>
     <!-- Testimonial Cards 3-Grid -->
-    <div class='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8'>
+    <Swiper id='swiper-custom-navigation' options={opts}>
+      <SwiperWrapper>
+        {repeatedTestimonials.map((testimonial) => (
+          <SwiperSlide class={'w-full h-full py-8'}>
+            <Card className='w-full h-60'>
+              <CardHeader className='space-y-3'>
+                <CardTitle>
+                  <div class='text-muted-foreground text-3xl font-serif leading-none'>
+                    <QuoteIcon className='size-6 md:size-8 -rotate-180' />
+                  </div>
+                </CardTitle>
+                <CardDescription>
+                  <p>{testimonial.review}</p>
+                </CardDescription>
+              </CardHeader>
+              <CardFooter className='mt-auto justify-start'>
+                <div class='flex items-center gap-3.5'>
+                  <div class='w-11 h-11 rounded-full overflow-hidden shrink-0'>
+                    <img
+                      alt={testimonial.name}
+                      class='w-full h-full object-cover'
+                      src={testimonial.image}
+                    />
+                  </div>
+                  <div>
+                    <div class='flex text-xs mb-1'>
+                      {Array.from({ length: testimonial.rating }).map(() => (
+                        <StarIcon className='fill-yellow-400 stroke-amber-50 size-3' />
+                      ))}
+                    </div>
+                    <h4 class='text-sm font-bold text-foreground leading-tight'>
+                      {testimonial.name}
+                    </h4>
+                    <p class='text-[11px] text-muted-foreground font-medium'>
+                      {testimonial.designation}
+                    </p>
+                  </div>
+                </div>
+              </CardFooter>
+            </Card>
+          </SwiperSlide>
+        ))}
+      </SwiperWrapper>
+    </Swiper>
+
+    <!-- <div class='grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8'>
       {testimonies.map((testimonial) => (
         <Card>
           <CardHeader className='space-y-3'>
@@ -110,42 +220,40 @@ const testimonies = [
           </CardFooter>
         </Card>
       ))}
-
-      <!-- {testimonies.map((testimonial) => (
-        <div class='bg-background rounded-2xl p-7 border border-border shadow-sm flex flex-col justify-between'>
-          <div>
-            <div class='text-muted-foreground text-3xl font-serif leading-none mb-3'>
-              <QuoteIcon className='size-5 -rotate-180' />
-            </div>
-            <p class='text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6 font-medium'>
-              {testimonial.review}
-            </p>
-          </div>
-          <div class='pt-4 border-t border-border flex items-center gap-3.5'>
-            <div class='w-11 h-11 rounded-full bg-background overflow-hidden shrink-0'>
-              <img
-                alt={testimonial.name}
-                class='w-full h-full object-cover'
-                src={testimonial.image}
-              />
-            </div>
-            <div>
-              <div class='flex text-xs mb-1'>
-                {Array.from({ length: testimonial.rating }).map(() => (
-                  <StarIcon className='fill-yellow-400 stroke-amber-50 size-3' />
-                ))}
-              </div>
-              <h4 class='text-sm font-bold text-foreground leading-tight'>
-                {testimonial.name}
-              </h4>
-              <p class='text-[11px] text-muted-foreground font-medium'>
-                {testimonial.designation}
-              </p>
-            </div>
-          </div>
-        </div>
-      ))} -->
-    </div>
+    </div> -->
   </div>
 </section>
 <!-- END: ClientTestimonialsSection -->
+
+<script>
+  import { getSwiperFromUniqueSelector } from 'astro-swiper';
+
+  function initSwiper() {
+    const swiper = getSwiperFromUniqueSelector('#swiper-custom-navigation');
+    if (!swiper) return;
+
+    // If you want to do something with the swiper instance, you can do it here
+    // console.log('Swiper initialized:', swiper);
+
+    const prevButton = document.querySelector<HTMLButtonElement>(
+      '#client-success-stories-prev',
+    );
+    const nextButton = document.querySelector<HTMLButtonElement>(
+      '#client-success-stories-next',
+    );
+
+    if (!swiper || !prevButton || !nextButton) return;
+
+    if (
+      !swiper.params.navigation ||
+      typeof swiper.params.navigation === 'boolean'
+    )
+      return;
+
+    swiper.params.navigation.prevEl = prevButton;
+    swiper.params.navigation.nextEl = nextButton;
+    swiper.init();
+  }
+
+  document.addEventListener('astro:page-load', initSwiper);
+</script>

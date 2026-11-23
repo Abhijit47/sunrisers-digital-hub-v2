@@ -20,7 +20,7 @@ const navlinks = [
   { name: "Industries", href: "/industries" },
   { name: "Case Studies", href: "/case-studies" },
   { name: "Resources", href: "/resources" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact", href: "/contact-us" },
 ];
 
 export default function MobileNav({ pathname }: { pathname: string }) {

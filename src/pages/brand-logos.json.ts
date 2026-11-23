@@ -14,6 +14,7 @@ export const GET = (async () => {
   });
 
   const data = (await res.json()) as SVG[];
+  console.log("Fetched brand logos:", data.length);
 
-  return new Response(JSON.stringify(data, null, 2));
+  return new Response(JSON.stringify(null, null, 2));
 }) satisfies APIRoute;

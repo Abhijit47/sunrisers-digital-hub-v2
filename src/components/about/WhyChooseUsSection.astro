@@ -1,0 +1,126 @@
+---
+import Link from 'astro-typesafe-routes/link';
+import {
+  ArrowRightCircle,
+  BriefcaseBusinessIcon,
+  ChartPieIcon,
+  ChessKnightIcon,
+  HeadsetIcon,
+  HeartHandshakeIcon,
+  LightbulbIcon,
+} from 'lucide-react';
+import { buttonVariants } from '../ui/button';
+---
+
+<!-- BEGIN: WhyChooseUsSection -->
+<section class='py-20' data-purpose='why-choose-us'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <div class='grid grid-cols-1 lg:grid-cols-12 gap-10 items-center'>
+      <!-- Left Headline & Content -->
+      <div class='lg:col-span-4 space-y-5'>
+        <div class='inline-flex items-center gap-2 text-primary font-bold text-xs tracking-widest uppercase'>
+          <span class='w-6 h-0.5 bg-primary inline-block'></span>
+          WHY CHOOSE US
+        </div>
+        <h2 class='text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight leading-tight'>
+          Your Growth
+          <br />
+          Our Com<span class='text-primary'>mitment</span>
+        </h2>
+        <p class='text-muted-foreground text-sm md:text-base leading-relaxed'>
+          We combine creativity, technology, and data to create digital
+          strategies that work. Here's what makes us different:
+        </p>
+        <div class='pt-2'>
+          <Link
+            class={buttonVariants({
+              variant: 'default',
+              size: 'lg',
+              className: 'rounded-full!',
+            })}
+            to='/about'>
+            <span>Discover More</span>
+            <ArrowRightCircle className='size-5' />
+          </Link>
+        </div>
+      </div>
+      <!-- Right 2x3 Grid of Feature Cards -->
+      <div class='lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+        <!-- Card 1 -->
+        <div class='bg-white p-5 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-lg transition-all'>
+          <div class='w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 mb-3'>
+            <ChessKnightIcon className='size-5' />
+          </div>
+          <h4 class='font-bold text-sm text-[#08234d] mb-1'>
+            Strategic Approach
+          </h4>
+          <p class='text-xs text-slate-500 leading-snug'>
+            Goal-focused strategies for maximum ROI.
+          </p>
+        </div>
+        <!-- Card 2 -->
+        <div class='bg-white p-5 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-lg transition-all'>
+          <div class='w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 mb-3'>
+            <BriefcaseBusinessIcon className='size-5' />
+          </div>
+          <h4 class='font-bold text-sm text-[#08234d] mb-1'>
+            Expertise Across Industries
+          </h4>
+          <p class='text-xs text-slate-500 leading-snug'>
+            Deep industry knowledge for tailored solutions.
+          </p>
+        </div>
+        <!-- Card 3 -->
+        <div class='bg-white p-5 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-lg transition-all'>
+          <div class='w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 mb-3'>
+            <ChartPieIcon className='size-5' />
+          </div>
+          <h4 class='font-bold text-sm text-[#08234d] mb-1'>
+            Transparent Reporting
+          </h4>
+          <p class='text-xs text-slate-500 leading-snug'>
+            Clear insights, real performance.
+          </p>
+        </div>
+        <!-- Card 4 -->
+        <div class='bg-white p-5 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-lg transition-all'>
+          <div class='w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 mb-3'>
+            <HeadsetIcon className='size-5' />
+          </div>
+          <h4 class='font-bold text-sm text-[#08234d] mb-1'>
+            End-to-End Support
+          </h4>
+          <p class='text-xs text-slate-500 leading-snug'>
+            From strategy to success, we're with you.
+          </p>
+        </div>
+        <!-- Card 5 -->
+        <div class='bg-white p-5 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-lg transition-all'>
+          <div class='w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 mb-3'>
+            <LightbulbIcon className='size-5' />
+          </div>
+          <h4 class='font-bold text-sm text-[#08234d] mb-1'>
+            Innovative Solutions
+          </h4>
+          <p class='text-xs text-slate-500 leading-snug'>
+            Stay ahead with the latest digital trends.
+          </p>
+        </div>
+        <!-- Card 6 -->
+        <div class='bg-white p-5 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-lg transition-all'>
+          <div class='w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-sky-600 mb-3'>
+            <i class='fa-solid fa-heart text-base'></i>
+            <HeartHandshakeIcon className='size-5' />
+          </div>
+          <h4 class='font-bold text-sm text-[#08234d] mb-1'>
+            Long-Term Partnership
+          </h4>
+          <p class='text-xs text-slate-500 leading-snug'>
+            Grow with a team that cares.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: WhyChooseUsSection -->

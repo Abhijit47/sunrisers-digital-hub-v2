@@ -1,8 +1,19 @@
 ---
-import { wipeTransition } from '@/lib/view-transitions';
+import { pixeletedTransition } from '@/lib/view-transitions';
+import HeroSection from '../components/about/HeroSection.astro';
+import MissionVisionImpactSection from '../components/about/MissionVisionImpactSection.astro';
+import OurStorySection from '../components/about/OurStorySection.astro';
+import RocketCtaBanner from '../components/about/RocketCtaBanner.astro';
+import WhyChooseUsSection from '../components/about/WhyChooseUsSection.astro';
+
+// import ClientTestimonialsSection from '../components/about/ClientTestimonialsSection.astro';
+// import TrustedBrandsSection from '../components/about/TrustedBrandsSection.astro';
+
 import Layout from '../layouts/Layout.astro';
 
 import { createRoute } from 'astro-typesafe-routes/create-route';
+import BrandsWorkedWithSection from '../components/home/BrandsWorkedWithSection.astro';
+import ClientTestimonialsSection from '../components/home/ClientTestimonialsSection.astro';
 
 export const Route = createRoute({
   routeId: '/about',
@@ -12,7 +23,38 @@ const pathname = Astro.request.url.split('/')[3] || '/';
 ---
 
 <Layout title='About'>
-  <main class='max-w-7xl mx-auto' transition:animate={wipeTransition}>
-    <h1>{pathname}</h1>
+  <main transition:animate={pixeletedTransition}>
+    <HeroSection />
+
+    <OurStorySection />
+
+    <MissionVisionImpactSection />
+
+    <WhyChooseUsSection />
+
+    <RocketCtaBanner />
+
+    <!-- <TrustedBrandsSection /> -->
+
+    <!-- <ClientTestimonialsSection /> -->
+
+    <BrandsWorkedWithSection />
+    <ClientTestimonialsSection />
+
+    <!-- Top Decorative Wave Divider -->
+    <div class='curved-wave-footerr'>
+      <svg
+        class='w-full h-full'
+        fill='none'
+        preserveAspectRatio='none'
+        viewBox='0 0 1200 30'>
+        <path
+          d='M0 25C150 10 300 30 450 15C600 0 750 25 900 10C1050 -5 1200 20 1200 20V30H0V25Z'
+          fill='#f97316'></path>
+        <path
+          d='M0 28C200 15 400 35 600 20C800 5 1000 30 1200 20V30H0V28Z'
+          fill='#0284c7'></path>
+      </svg>
+    </div>
   </main>
 </Layout>

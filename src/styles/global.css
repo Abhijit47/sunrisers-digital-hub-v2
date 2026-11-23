@@ -158,3 +158,29 @@
       0 10px 15px -5px rgba(243, 108, 33, 0.08);
   }
 }
+
+/* ABOUT PAGE */
+/* Subtle decorative elements & custom gradients */
+.hero-bg-gradient {
+  background: radial-gradient(
+    circle at 15% 50%,
+    #0c2856 0%,
+    #061530 60%,
+    #040e22 100%
+  );
+}
+.impact-bg-gradient {
+  background: linear-gradient(135deg, #091e42 0%, #051329 100%);
+}
+.rocket-banner-gradient {
+  background: linear-gradient(90deg, #071938 0%, #0c2957 60%, #153970 100%);
+}
+.curved-wave-footer {
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

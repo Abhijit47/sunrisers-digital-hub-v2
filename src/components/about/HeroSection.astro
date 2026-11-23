@@ -1,0 +1,69 @@
+---
+import Link from 'astro-typesafe-routes/link';
+import { ArrowRightCircle, SunIcon } from 'lucide-react';
+import { buttonVariants } from '../ui/button';
+---
+
+<!-- BEGIN: HeroSection -->
+<section
+  class='relative hero-bg-gradient overflow-hidden'
+  data-purpose='hero-banner'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center'>
+    <!-- Hero Copy Left Column -->
+    <div class='lg:col-span-6 z-10 space-y-6'>
+      <div class='inline-flex items-center gap-2 text-background font-bold text-xs tracking-widest uppercase'>
+        <span class='w-6 h-0.5 bg-primary inline-block'></span>
+        ABOUT US
+      </div>
+      <h1 class='text-4xl sm:text-5xl text-background lg:text-6xl font-extrabold tracking-tight leading-tight'>
+        Building Digital Success
+        <span class='text-primary'>Together</span>
+      </h1>
+      <p class='text-background text-base sm:text-lg max-w-xl font-normal leading-relaxed'>
+        We are a full-service digital marketing agency helping businesses grow,
+        scale, and thrive in the digital world.
+      </p>
+      <div class='pt-2'>
+        <Link
+          class={buttonVariants({
+            variant: 'default',
+            size: 'lg',
+            class: 'bg-primary text-background hover:bg-primary/90',
+          })}
+          to='/about'>
+          <span>Let's Grow Together</span>
+          <ArrowRightCircle />
+        </Link>
+      </div>
+    </div>
+    <!-- Hero Visual Right Column (Glass Modern Office) -->
+    <div class='lg:col-span-6 relative flex justify-center lg:justify-end'>
+      <div class='relative w-full max-w-lg lg:max-w-none rounded-2xl overflow-hidden shadow-2xl border border-white/10 group'>
+        <!-- Modern Glass Building Representation -->
+        <div class='relative h-72 sm:h-96 w-full bg-slate-900 overflow-hidden'>
+          <img
+            alt='Sunrisers Digital Hub Corporate Headquarters'
+            class='w-full h-full object-cover object-center opacity-85 group-hover:scale-105 transition-transform duration-700 ease-out'
+            src='https://lh3.googleusercontent.com/aida-public/AB6AXuCWbDqSLl6kmdYLF0S_t8rs1u7yVAMVmac1iCm2mbxFKT1UDUa9yrWyb3PdA5cz0c0OtvWrgQer76gBffs5ykPgdCMK-jWJ4MFUk6m7BJ7sj9Z2Rn4-cFo_NNAm2R9XKowK2dzlBnFZQG6yr5VM3vdV8xeBoMgXLweak7J2qL0WP1pBkJQ568Xn54lz7qLy14vSTeZYm-BJXuI1fS9K-nAGC3hxHa2TKJJJD-u2suuo'
+          />
+          <!-- Hub Signboard Overlay on building facade -->
+          <div class='absolute top-1/3 right-8 bg-[#091b3b]/90 backdrop-blur-md px-5 py-3 rounded-lg border border-sky-400/30 shadow-xl flex items-center gap-3'>
+            <div class='p-2 rounded-full bg-orange-600/20 flex items-center justify-center'>
+              <SunIcon className='stroke-orange-500' />
+            </div>
+            <div class='leading-tight'>
+              <div class='text-white text-xs font-black tracking-wider uppercase'>
+                SUNRISERS
+              </div>
+              <div class='text-[9px] font-bold text-sky-400 uppercase tracking-widest'>
+                DIGITAL HUB
+              </div>
+            </div>
+          </div>
+          <div class='absolute inset-0 bg-linear-to-t from-[#061530] via-transparent to-transparent opacity-60'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: HeroSection -->

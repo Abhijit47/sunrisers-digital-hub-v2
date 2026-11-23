@@ -1,0 +1,104 @@
+---
+import {
+  BicepsFlexedIcon,
+  ChartColumnDecreasingIcon,
+  EyeIcon,
+  StarCheckIcon,
+  TargetIcon,
+  TrendingUpIcon,
+  TrophyIcon,
+} from 'lucide-react';
+---
+
+<!-- BEGIN: MissionVisionImpactSection -->
+<section class='py-12 bg-[#f8fafc]' data-purpose='mission-vision-metrics'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <div class='grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch'>
+      <!-- Mission Card -->
+      <div class='lg:col-span-3 bg-linear-to-b from-sky-50 to-white p-7 rounded-2xl border border-sky-100 shadow-sm flex flex-col justify-between'>
+        <div>
+          <div class='w-12 h-12 rounded-full bg-[#08234d] flex items-center justify-center text-white mb-5 shadow-sm'>
+            <TargetIcon className='size-6' />
+          </div>
+          <h3 class='text-lg font-extrabold text-[#08234d] mb-2'>
+            Our Mission
+          </h3>
+          <p class='text-xs text-muted-foreground leading-relaxed'>
+            To empower businesses with innovative digital marketing strategies
+            that drive measurable growth and long-term success.
+          </p>
+        </div>
+      </div>
+      <!-- Vision Card -->
+      <div class='lg:col-span-3 bg-linear-to-b from-amber-50/70 to-white p-7 rounded-2xl border border-amber-100 shadow-sm flex flex-col justify-between'>
+        <div>
+          <div class='w-12 h-12 rounded-full bg-background flex items-center justify-center text-primary mb-5 shadow-sm'>
+            <EyeIcon className='size-6' />
+          </div>
+          <h3 class='text-lg font-extrabold text-[#08234d] mb-2'>Our Vision</h3>
+          <p class='text-xs text-muted-foreground leading-relaxed'>
+            To be the most trusted and preferred digital marketing partner for
+            businesses globally.
+          </p>
+        </div>
+      </div>
+      <!-- Numbers That Speak (Impact Card) -->
+      <div class='lg:col-span-6 impact-bg-gradient text-white p-8 rounded-2xl border border-slate-700/50 relative overflow-hidden flex flex-col justify-between'>
+        <!-- Soft Background Graphic Overlay -->
+        <div class='absolute -right-10 bottom-0 opacity-10 pointer-events-none z-50'>
+          <!-- <i class='fa-solid fa-chart-simple text-9xl'></i> -->
+          <ChartColumnDecreasingIcon className='text-9xl text-red-500' />
+        </div>
+        <div>
+          <div class='inline-flex items-center gap-2 text-primary font-bold text-xs tracking-widest uppercase mb-1'>
+            <span class='w-5 h-0.5 bg-background inline-block'></span>
+            OUR IMPACT
+          </div>
+          <h3 class='text-2xl font-extrabold tracking-tight'>
+            Numbers That Speak
+          </h3>
+        </div>
+        <!-- 4 Metrics Grid -->
+        <div class='grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-4 border-t border-slate-800'>
+          <div class='text-center sm:text-left'>
+            <div class='text-brand-orange mb-1'>
+              <TrophyIcon className='size-6 stroke-primary' />
+            </div>
+            <div class='text-2xl font-black text-white'>500+</div>
+            <div class='text-[11px] text-slate-300 font-medium'>
+              Projects Delivered
+            </div>
+          </div>
+          <div class='text-center sm:text-left'>
+            <div class='text-brand-orange mb-1'>
+              <TrendingUpIcon className='size-6 stroke-primary' />
+            </div>
+            <div class='text-2xl font-black text-white'>100+</div>
+            <div class='text-[11px] text-slate-300 font-medium'>
+              Businesses Grown
+            </div>
+          </div>
+          <div class='text-center sm:text-left'>
+            <div class='text-brand-orange mb-1'>
+              <BicepsFlexedIcon className='size-6 stroke-primary' />
+            </div>
+            <div class='text-2xl font-black text-white'>8+</div>
+            <div class='text-[11px] text-slate-300 font-medium'>
+              Years of Experience
+            </div>
+          </div>
+          <div class='text-center sm:text-left'>
+            <div class='text-brand-orange mb-1'>
+              <StarCheckIcon className='size-6 stroke-primary' />
+            </div>
+            <div class='text-2xl font-black text-white'>4.8/5</div>
+            <div class='text-[11px] text-slate-300 font-medium'>
+              Client Satisfaction
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: MissionVisionImpactSection -->

@@ -1,6 +1,5 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { bumpTransition } from '@/lib/view-transitions';
 import { createRoute } from 'astro-typesafe-routes/create-route';
 
 export const Route = createRoute({
@@ -10,8 +9,8 @@ export const Route = createRoute({
 const pathname = Astro.request.url.split('/')[3] || '/';
 ---
 
-<Layout title='About'>
-  <main transition:animate={bumpTransition}>
+<Layout title='Services'>
+  <main>
     <h1 class='text-2xl text-center font-bold mt-10'>{pathname} Route</h1>
   </main>
 </Layout>

@@ -9,8 +9,8 @@ import OurServicesSection from '@/components/home/OurServicesSection.astro';
 import PreFooterBannerCTA from '@/components/home/PreFooterBannerCTA.astro';
 import WhyChooseUsSection from '@/components/home/WhyChooseUsSection.astro';
 import Layout from '@/layouts/Layout.astro';
+import { pixeletedTransition } from '@/lib/view-transitions';
 import { createRoute } from 'astro-typesafe-routes/create-route';
-import { pixeletedTransition } from '../lib/view-transitions';
 
 export const Route = createRoute({
   routeId: '/',

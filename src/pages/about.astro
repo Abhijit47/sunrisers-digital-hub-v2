@@ -1,19 +1,18 @@
 ---
+import HeroSection from '@/components/about/HeroSection.astro';
+import MissionVisionImpactSection from '@/components/about/MissionVisionImpactSection.astro';
+import OurStorySection from '@/components/about/OurStorySection.astro';
+import RocketCtaBanner from '@/components/about/RocketCtaBanner.astro';
+import WhyChooseUsSection from '@/components/about/WhyChooseUsSection.astro';
+import BrandsWorkedWithSection from '@/components/home/BrandsWorkedWithSection.astro';
+import ClientTestimonialsSection from '@/components/home/ClientTestimonialsSection.astro';
+import Layout from '@/layouts/Layout.astro';
 import { pixeletedTransition } from '@/lib/view-transitions';
-import HeroSection from '../components/about/HeroSection.astro';
-import MissionVisionImpactSection from '../components/about/MissionVisionImpactSection.astro';
-import OurStorySection from '../components/about/OurStorySection.astro';
-import RocketCtaBanner from '../components/about/RocketCtaBanner.astro';
-import WhyChooseUsSection from '../components/about/WhyChooseUsSection.astro';
 
-// import ClientTestimonialsSection from '../components/about/ClientTestimonialsSection.astro';
-// import TrustedBrandsSection from '../components/about/TrustedBrandsSection.astro';
-
-import Layout from '../layouts/Layout.astro';
+// import ClientTestimonialsSection from '@/components/about/ClientTestimonialsSection.astro';
+// import TrustedBrandsSection from '@/components/about/TrustedBrandsSection.astro';
 
 import { createRoute } from 'astro-typesafe-routes/create-route';
-import BrandsWorkedWithSection from '../components/home/BrandsWorkedWithSection.astro';
-import ClientTestimonialsSection from '../components/home/ClientTestimonialsSection.astro';
 
 export const Route = createRoute({
   routeId: '/about',

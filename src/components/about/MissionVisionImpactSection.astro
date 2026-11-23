@@ -8,6 +8,7 @@ import {
   TrendingUpIcon,
   TrophyIcon,
 } from 'lucide-react';
+import CountUpNumber from '../CountUpNumber.astro';
 ---
 
 <!-- BEGIN: MissionVisionImpactSection -->
@@ -64,7 +65,16 @@ import {
             <div class='text-brand-orange mb-1'>
               <TrophyIcon className='size-6 stroke-primary' />
             </div>
-            <div class='text-2xl font-black text-white'>500+</div>
+            <!-- class='text-2xl font-black text-white' -->
+            <div>
+              <CountUpNumber
+                className='text-2xl font-black leading-tight text-background'
+                end={500}
+                suffix='+'
+                autoAnimate={true}
+                useIndianSeparators={true}
+              />
+            </div>
             <div class='text-[11px] text-slate-300 font-medium'>
               Projects Delivered
             </div>
@@ -73,7 +83,16 @@ import {
             <div class='text-brand-orange mb-1'>
               <TrendingUpIcon className='size-6 stroke-primary' />
             </div>
-            <div class='text-2xl font-black text-white'>100+</div>
+            <!-- <div class='text-2xl font-black text-white'>100+</div> -->
+            <div>
+              <CountUpNumber
+                className='text-2xl font-black leading-tight text-background'
+                end={100}
+                suffix='+'
+                autoAnimate={true}
+                useIndianSeparators={true}
+              />
+            </div>
             <div class='text-[11px] text-slate-300 font-medium'>
               Businesses Grown
             </div>
@@ -82,7 +101,16 @@ import {
             <div class='text-brand-orange mb-1'>
               <BicepsFlexedIcon className='size-6 stroke-primary' />
             </div>
-            <div class='text-2xl font-black text-white'>8+</div>
+            <!-- <div class='text-2xl font-black text-white'>8+</div> -->
+            <div>
+              <CountUpNumber
+                className='text-2xl font-black leading-tight text-background'
+                end={8}
+                suffix='+'
+                autoAnimate={true}
+                useIndianSeparators={true}
+              />
+            </div>
             <div class='text-[11px] text-slate-300 font-medium'>
               Years of Experience
             </div>
@@ -91,7 +119,17 @@ import {
             <div class='text-brand-orange mb-1'>
               <StarCheckIcon className='size-6 stroke-primary' />
             </div>
-            <div class='text-2xl font-black text-white'>4.8/5</div>
+            <!-- <div class='text-2xl font-black text-white'>4.8/5</div> -->
+            <div>
+              <CountUpNumber
+                className='text-2xl font-black leading-tight text-background'
+                suffix='/5'
+                autoAnimate={true}
+                useIndianSeparators={true}
+                decimal={'4.8'}
+                decimalPlaces={1}
+              />
+            </div>
             <div class='text-[11px] text-slate-300 font-medium'>
               Client Satisfaction
             </div>

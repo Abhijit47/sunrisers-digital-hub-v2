@@ -2,7 +2,7 @@ import type { SVG } from "@/types";
 import type { APIRoute } from "astro";
 
 // Outputs: /brand-logos.json
-export const GET = (async ({ params, request }) => {
+export const GET = (async () => {
   const abortController = new AbortController();
 
   const res = await fetch("https://api.svgl.app", {

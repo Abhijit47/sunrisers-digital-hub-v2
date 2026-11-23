@@ -7,7 +7,6 @@ import WhyChooseUsSection from '@/components/about/WhyChooseUsSection.astro';
 import BrandsWorkedWithSection from '@/components/home/BrandsWorkedWithSection.astro';
 import ClientTestimonialsSection from '@/components/home/ClientTestimonialsSection.astro';
 import Layout from '@/layouts/Layout.astro';
-import { pixeletedTransition } from '@/lib/view-transitions';
 
 // import ClientTestimonialsSection from '@/components/about/ClientTestimonialsSection.astro';
 // import TrustedBrandsSection from '@/components/about/TrustedBrandsSection.astro';
@@ -22,7 +21,7 @@ export const Route = createRoute({
 ---
 
 <Layout title='About'>
-  <main transition:animate={pixeletedTransition}>
+  <main>
     <HeroSection />
 
     <OurStorySection />
